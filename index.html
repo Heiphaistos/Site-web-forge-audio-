@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Forge Audio — votre musique, sans pub</title>
+  <meta name="description" content="Forge Audio : lecteur musical sans publicité. YouTube, SoundCloud, Dailymotion, liens Spotify et Deezer, paroles, vidéo, égaliseur. Web, Android, iPhone, Windows, macOS et Linux." />
+  <meta name="theme-color" content="#0b0908" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:title" content="Forge Audio" />
+  <meta property="og:description" content="Votre musique, sans pub. Sur le web, le téléphone et l'ordinateur." />
+  <meta property="og:image" content="https://forgeaudio.heiphaistos.org/assets/desk-search.webp" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --bg: #0b0908; --bg-2: #120e0c; --surface: #17120f; --line: rgba(255, 236, 220, .09);
+      --text: #f6f1ec; --muted: #a89d94; --ember: #ff6a1a; --gold: #ffb347; --red: #d7263d;
+      --grad: linear-gradient(100deg, var(--gold), var(--ember) 50%, var(--red));
+      --radius: 18px; --wrap: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { width: min(var(--wrap), 100% - 32px); margin-inline: auto; }
+    .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: rgba(11, 9, 8, .72); border-bottom: 1px solid var(--line); }
+    .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; text-decoration: none; letter-spacing: -.01em; }
+    .brand img { width: 30px; height: 30px; }
+    nav { display: flex; align-items: center; gap: 26px; font-size: 14.5px; }
+    nav a { text-decoration: none; color: var(--muted); }
+    nav a:hover { color: var(--text); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; border: 1px solid var(--line); transition: transform .15s, background .15s, border-color .15s; white-space: nowrap; }
+    .btn:hover { transform: translateY(-1px); border-color: rgba(255, 236, 220, .25); }
+    .btn-fire { background: var(--ember); color: #160a03; border-color: transparent; box-shadow: 0 10px 30px -10px rgba(255, 106, 26, .7); }
+    .btn-fire:hover { background: #ff7d36; }
+    .btn-sm { padding: 9px 16px; font-size: 14px; }
+    .btn svg { width: 18px; height: 18px; flex: none; }
+
+    /* Hero */
+    .hero { position: relative; padding: 88px 0 40px; isolation: isolate; overflow-x: clip; }
+    .hero::before { content: ""; position: absolute; inset: -20% -10% auto; height: 760px; z-index: -1;
+      background: radial-gradient(40% 50% at 25% 35%, rgba(255, 106, 26, .22), transparent 70%), radial-gradient(35% 45% at 80% 20%, rgba(215, 38, 61, .16), transparent 70%); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--gold); border: 1px solid rgba(255, 179, 71, .25); background: rgba(255, 179, 71, .06); padding: 6px 12px; border-radius: 999px; }
+    h1 { font-size: clamp(42px, 6.4vw, 78px); line-height: 1; letter-spacing: -.035em; margin: 20px 0 22px; font-weight: 850; }
+    .lead { font-size: 18.5px; color: var(--muted); max-width: 34em; margin: 0 0 30px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .note { margin-top: 18px; font-size: 13.5px; color: var(--muted); }
+
+    /* Equalizer bars (the logo motif, alive) */
+    .eq { display: flex; align-items: flex-end; gap: 6px; height: 46px; margin-top: 38px; }
+    .eq i { width: 7px; border-radius: 4px; background: var(--grad); height: 30%; animation: eq 1.2s ease-in-out infinite alternate; opacity: .9; }
+    @keyframes eq { to { height: 100%; } }
+
+    .stage { position: relative; }
+    .stage .desk { border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(0, 0, 0, .4); transform: perspective(1400px) rotateY(-9deg) rotateX(3deg); transform-origin: left center; }
+    .stage .phone { position: absolute; width: 27%; right: -3%; bottom: -16%; border-radius: 26px; border: 6px solid #231c18; box-shadow: 0 30px 70px -20px rgba(0, 0, 0, .95); }
+
+    /* Sources strip */
+    .sources { margin: 90px 0 0; border-block: 1px solid var(--line); background: var(--bg-2); }
+    .sources .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 34px; padding: 22px 0; color: var(--muted); font-weight: 700; font-size: 15px; }
+    .sources span:first-child { font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: .12em; }
+
+    section { padding: 100px 0 0; }
+    h2 { font-size: clamp(30px, 4vw, 46px); letter-spacing: -.03em; line-height: 1.08; margin: 0 0 14px; font-weight: 820; }
+    .sub { color: var(--muted); font-size: 17px; max-width: 40em; margin: 0 0 44px; }
+
+    /* Features */
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .feat { background: var(--bg); padding: 28px 26px 30px; }
+    .feat svg { width: 26px; height: 26px; stroke: var(--ember); margin-bottom: 16px; }
+    .feat h3 { margin: 0 0 6px; font-size: 17.5px; letter-spacing: -.01em; }
+    .feat p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    /* Split (mobile) */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .phones { display: flex; gap: 18px; justify-content: center; }
+    .phones img { width: 46%; border-radius: 26px; border: 6px solid #231c18; box-shadow: 0 30px 60px -25px rgba(0, 0, 0, .9); }
+    .phones img:last-child { transform: translateY(40px); }
+    .ticks { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 12px; }
+    .ticks li { display: flex; gap: 12px; color: var(--muted); }
+    .ticks li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 9px; border-radius: 2px; background: var(--grad); transform: rotate(45deg); }
+    .ticks b { color: var(--text); font-weight: 650; }
+
+    /* Downloads */
+    .dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; gap: 12px; }
+    .card h3 { margin: 0; font-size: 20px; display: flex; align-items: center; gap: 10px; }
+    .card h3 svg { width: 22px; height: 22px; color: var(--gold); }
+    .card p { margin: 0; color: var(--muted); font-size: 14.5px; flex: 1; }
+    .card .links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .card .links a:not(.btn) { font-size: 13.5px; color: var(--muted); }
+    .card small { color: var(--muted); font-size: 12.5px; }
+    .card.web { background: linear-gradient(160deg, rgba(255, 106, 26, .16), rgba(215, 38, 61, .08) 60%, var(--surface)); border-color: rgba(255, 106, 26, .3); }
+
+    /* FAQ */
+    details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    details summary { cursor: pointer; font-weight: 650; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    details summary::after { content: "+"; color: var(--ember); font-size: 22px; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { color: var(--muted); margin: 10px 0 0; max-width: 52em; }
+    .faq { max-width: 860px; }
+
+    footer { margin-top: 110px; border-top: 1px solid var(--line); padding: 30px 0 40px; color: var(--muted); font-size: 14px; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; }
+    footer a { color: var(--muted); }
+
+    @media (max-width: 960px) {
+      .hero { padding-top: 56px; }
+      .hero-grid, .split { grid-template-columns: 1fr; gap: 48px; }
+      .stage { margin-bottom: 40px; }
+      .stage .desk { transform: none; }
+      .stage .phone { width: 24%; right: 2%; bottom: -16%; border-width: 4px; border-radius: 18px; }
+      .features, .dl { grid-template-columns: 1fr 1fr; }
+      nav a:not(.btn) { display: none; }
+      .phones img:last-child { transform: translateY(24px); }
+    }
+    @media (max-width: 620px) {
+      .features, .dl { grid-template-columns: 1fr; }
+      .lead { font-size: 17px; }
+      section { padding-top: 76px; }
+      .cta .btn { flex: 1 1 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) { .eq i { animation: none; } html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5z"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></symbol>
+  </svg>
+
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="#"><img src="assets/icon.svg" alt="" /> <span>Forge <span class="grad">Audio</span></span></a>
+      <nav>
+        <a href="#fonctions">Fonctions</a>
+        <a href="#mobile">Mobile</a>
+        <a href="#telecharger">Télécharger</a>
+        <a href="#faq">Questions</a>
+        <a class="btn btn-fire btn-sm" href="https://connect.forgeaudio.heiphaistos.org/">Se connecter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Version 0.4 · web, mobile et bureau</span>
+          <h1>Votre musique,<br /><span class="grad">sans pub.</span></h1>
+          <p class="lead">Forge Audio puise dans YouTube, SoundCloud, Dailymotion et plus de mille sites, lit vos liens Spotify, Deezer et Apple Music, et garde vos playlists synchronisées sur tous vos appareils. Aucune publicité, aucune coupure.</p>
+          <div class="cta">
+            <a class="btn btn-fire" href="https://connect.forgeaudio.heiphaistos.org/"><svg><use href="#i-play" /></svg>Ouvrir le lecteur</a>
+            <a class="btn" href="#telecharger"><svg><use href="#i-down" /></svg>Télécharger les applications</a>
+          </div>
+          <p class="note">Lecteur privé : l'accès se fait avec un compte fourni sur invitation.</p>
+          <div class="eq" aria-hidden="true"></div>
+        </div>
+        <div class="stage">
+          <img class="desk" src="assets/desk-search.webp" width="1600" height="1000" alt="Forge Audio sur ordinateur : résultats de recherche multi-sources et lecteur" />
+          <img class="phone" src="assets/mob-home.webp" width="560" height="1212" alt="Forge Audio sur téléphone : écran d'accueil" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="sources">
+      <div class="wrap">
+        <span>Sources</span><span>YouTube</span><span>YouTube Music</span><span>SoundCloud</span><span>Dailymotion</span><span>Bandcamp</span><span>Spotify</span><span>Deezer</span><span>Apple Music</span>
+      </div>
+    </div>
+
+    <section id="fonctions">
+      <div class="wrap">
+        <h2>Tout ce qu'il faut. <span class="grad">Rien de trop.</span></h2>
+        <p class="sub">Un lecteur complet qui se fait oublier : cherchez, collez un lien, écoutez.</p>
+        <div class="features">
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <h3>Recherche multi-sources</h3>
+            <p>YouTube, YouTube Music, SoundCloud et Dailymotion d'un coup, avec suggestions et genres à explorer.</p>
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/></svg>
+            <h3>Collez un lien</h3>
+            <p>Un titre ou une playlist entière de Spotify, Deezer, Apple Music, YouTube ou SoundCloud, importée en un clic.</p>
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="m10 9 4 2-4 2z"/><path d="M8 21h8"/></svg>
+            <h3>Vidéo synchronisée</h3>
+            <p>Le clip jusqu'en 1080p sans couper le son : plein écran, lecteur réduit flottant ou image dans l'image.</p>
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+            <h3>Paroles synchronisées</h3>
+            <p>Les paroles défilent avec la musique ; touchez une ligne pour y aller.</p>
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+            <h3>Égaliseur 10 bandes</h3>
+            <p>Dix préréglages, visualiseur, vitesse de 0,5× à 2×, minuteur de sommeil. Le son reste intact si vous n'y touchez pas.</p>
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.78A6 6 0 1 0 6 16.5"/><path d="m9 17 2 2 4-4"/></svg>
+            <h3>Sauvegarde automatique</h3>
+            <p>Playlists, titres likés, historique et file d'attente retrouvés sur chaque appareil où vous vous connectez.</p>
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 2v5h-5M6 22v-5h5"/></svg>
+            <h3>Radio automatique</h3>
+            <p>En fin de file, la lecture enchaîne sur des titres similaires.</p>
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>
+            <h3>Téléchargements</h3>
+            <p>MP3 320 kbit/s avec tags, audio d'origine ou vidéo MP4.</p>
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg>
+            <h3>Raccourcis et touches média</h3>
+            <p>Clavier, touches multimédia, écran de verrouillage, casque et Bluetooth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mobile">
+      <div class="wrap split">
+        <div class="phones">
+          <img src="assets/mob-search.webp" width="560" height="1212" alt="Recherche sur l'application mobile" loading="lazy" />
+          <img src="assets/mob-home.webp" width="560" height="1212" alt="Accueil de l'application mobile" loading="lazy" />
+        </div>
+        <div>
+          <h2>La musique continue,<br /><span class="grad">écran éteint.</span></h2>
+          <p class="sub">Un navigateur fermé arrête forcément la musique. Les applications, elles, continuent en arrière-plan.</p>
+          <ul class="ticks">
+            <li><span><b>Android et iPhone</b> : écran verrouillé ou dans une autre application, avec la notification (pochette, précédent, lecture, suivant).</span></li>
+            <li><span><b>Casque, Bluetooth et écran de verrouillage</b> : les commandes fonctionnent partout.</span></li>
+            <li><span><b>Windows, macOS et Linux</b> : fermer la fenêtre garde la musique dans la zone de notification.</span></li>
+            <li><span><b>Même compte partout</b> : vos playlists vous suivent du téléphone à l'ordinateur.</span></li>
+          </ul>
+          <a class="btn btn-fire" href="#telecharger"><svg><use href="#i-down" /></svg>Télécharger</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="telecharger">
+      <div class="wrap">
+        <h2>Sur tous vos <span class="grad">appareils.</span></h2>
+        <p class="sub">Gratuit, sans publicité. Les applications se connectent au même lecteur avec votre compte.</p>
+        <div class="dl">
+          <div class="card web">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Navigateur</h3>
+            <p>Rien à installer : ouvrez le lecteur et connectez-vous. Installable comme application (PWA) depuis le navigateur.</p>
+            <div class="links"><a class="btn btn-fire btn-sm" href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a></div>
+          </div>
+          <div class="card">
+            <h3><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.87 3.23a11.4 11.4 0 0 0-9.82 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>Android</h3>
+            <p>Téléchargez l'APK sur le téléphone, ouvrez-le et autorisez l'installation. Acceptez les notifications : ce sont elles qui gardent la musique en arrière-plan.</p>
+            <div class="links"><a class="btn btn-fire btn-sm" href="https://github.com/Heiphaistos/Forge-Audio-Android/releases/latest/download/ForgeAudio-android.apk"><svg><use href="#i-down" /></svg>APK Android</a></div>
+            <small>Android 7 ou plus récent.</small>
+          </div>
+          <div class="card">
+            <h3><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.62c-.02-2.26 1.85-3.35 1.93-3.4-1.05-1.54-2.69-1.75-3.27-1.77-1.39-.14-2.72.82-3.42.82-.71 0-1.8-.8-2.96-.78A4.38 4.38 0 0 0 4.96 9.7c-1.58 2.74-.4 6.8 1.13 9.02.75 1.09 1.64 2.3 2.8 2.26 1.13-.05 1.55-.73 2.92-.73 1.36 0 1.74.73 2.93.7 1.21-.02 1.98-1.1 2.72-2.2a9.8 9.8 0 0 0 1.24-2.53 3.94 3.94 0 0 1-2.33-3.6zM14.13 5.97a3.9 3.9 0 0 0 .9-2.83 4 4 0 0 0-2.6 1.35 3.76 3.76 0 0 0-.93 2.73 3.33 3.33 0 0 0 2.63-1.25z"/></svg>iPhone / iPad</h3>
+            <p>Installez le fichier IPA avec Sideloadly ou AltStore (gratuit, avec un identifiant Apple), ou ajoutez le lecteur à l'écran d'accueil depuis Safari.</p>
+            <div class="links"><a class="btn btn-sm" href="https://github.com/Heiphaistos/Forge-Audio-Android/releases/latest/download/ForgeAudio-ios-unsigned.ipa"><svg><use href="#i-down" /></svg>Fichier IPA</a><a href="https://github.com/Heiphaistos/Forge-Audio-Android#-iphone--ipad">Instructions</a></div>
+          </div>
+          <div class="card">
+            <h3><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.4 4.5v7H3zm0 13 7.4 1v-7H3zm8.3 1.1L21 21V12.5h-9.7zm0-15.2v7.1H21V3z"/></svg>Windows</h3>
+            <p>Installeur classique, ou version portable : un seul fichier, aucune installation.</p>
+            <div class="links"><a class="btn btn-sm" data-asset="win-x64-nsis.exe" href="https://github.com/Heiphaistos/Forge-audio-/releases/latest"><svg><use href="#i-down" /></svg>Installeur</a><a class="btn btn-sm" data-asset="win-portable.exe" href="https://github.com/Heiphaistos/Forge-audio-/releases/latest">Portable</a></div>
+          </div>
+          <div class="card">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>macOS</h3>
+            <p>Apple Silicon (M1 et plus) ou Intel. Au premier lancement : clic droit sur l'application, puis Ouvrir.</p>
+            <div class="links"><a class="btn btn-sm" data-asset="mac-arm64.dmg" href="https://github.com/Heiphaistos/Forge-audio-/releases/latest"><svg><use href="#i-down" /></svg>Apple Silicon</a><a class="btn btn-sm" data-asset="mac-x64.dmg" href="https://github.com/Heiphaistos/Forge-audio-/releases/latest">Intel</a></div>
+          </div>
+          <div class="card">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 17l6-6-6-6M12 19h8"/></svg>Linux</h3>
+            <p>AppImage (rendre exécutable et lancer), paquet .deb ou archive .tar.gz.</p>
+            <div class="links"><a class="btn btn-sm" data-asset="linux-x86_64.AppImage" href="https://github.com/Heiphaistos/Forge-audio-/releases/latest"><svg><use href="#i-down" /></svg>AppImage</a><a class="btn btn-sm" data-asset="linux-amd64.deb" href="https://github.com/Heiphaistos/Forge-audio-/releases/latest">.deb</a></div>
+            <small id="desk-version"></small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap faq">
+        <h2>Questions</h2>
+        <details>
+          <summary>Comment obtenir un compte ?</summary>
+          <p>Le lecteur est privé : les comptes sont créés par l'administrateur et remis sur invitation. Il n'y a pas d'inscription publique.</p>
+        </details>
+        <details>
+          <summary>Est-ce vraiment sans publicité ?</summary>
+          <p>Oui. Forge Audio lit directement le son des sources, sans les publicités des sites d'origine, et n'affiche aucune publicité de son côté. Aucun outil de mesure d'audience n'est utilisé.</p>
+        </details>
+        <details>
+          <summary>Mes playlists sont-elles sauvegardées ?</summary>
+          <p>Oui, automatiquement sur le serveur, pour chaque compte : playlists, titres likés, historique, file d'attente et réglages. Aucune musique n'est stockée sur le serveur ; les fichiers locaux que vous ouvrez sont lus par votre appareil et ne sont jamais envoyés.</p>
+        </details>
+        <details>
+          <summary>Pourquoi la musique s'arrête quand je ferme le navigateur ?</summary>
+          <p>Une page fermée n'existe plus, elle ne peut plus jouer. Utilisez l'application Android, iPhone ou de bureau : elles continuent en arrière-plan.</p>
+        </details>
+        <details>
+          <summary>L'application Android demande une adresse de serveur</summary>
+          <p>Elle est déjà remplie : <b>https://connect.forgeaudio.heiphaistos.org</b>. Appuyez sur Continuer puis connectez-vous. On peut la changer plus tard dans Paramètres, section Application mobile.</p>
+        </details>
+        <details>
+          <summary>Le code est-il ouvert ?</summary>
+          <p>Oui, sous licence MIT : <a href="https://github.com/Heiphaistos/Forge-audio-">lecteur et applications de bureau</a>, <a href="https://github.com/Heiphaistos/Forge-Audio-Android">applications mobiles</a>.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Forge Audio · Heiphaistos</span>
+      <span><a href="https://heiphaistos.org/legal">Mentions légales et confidentialité</a> · <a href="mailto:contact.forgeinformatique@heiphaistos.org">Contact</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/site.js" defer></script>
+</body>
+</html>
