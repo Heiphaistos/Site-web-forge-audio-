@@ -16,7 +16,7 @@
       --bg: #0b0908; --bg-2: #120e0c; --surface: #17120f; --line: rgba(255, 236, 220, .09);
       --text: #f6f1ec; --muted: #a89d94; --ember: #ff6a1a; --gold: #ffb347; --red: #d7263d;
       --grad: linear-gradient(100deg, var(--gold), var(--ember) 50%, var(--red));
-      --radius: 18px; --wrap: 1160px;
+      --radius: 18px; --wrap: 1320px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -42,7 +42,7 @@
     .btn svg { width: 18px; height: 18px; flex: none; }
 
     /* Hero */
-    .hero { position: relative; padding: 88px 0 40px; isolation: isolate; overflow-x: clip; }
+    .hero { position: relative; padding: 88px 0 120px; isolation: isolate; overflow-x: clip; }
     .hero::before { content: ""; position: absolute; inset: -20% -10% auto; height: 760px; z-index: -1;
       background: radial-gradient(40% 50% at 25% 35%, rgba(255, 106, 26, .22), transparent 70%), radial-gradient(35% 45% at 80% 20%, rgba(215, 38, 61, .16), transparent 70%); }
     .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
@@ -52,17 +52,23 @@
     .cta { display: flex; flex-wrap: wrap; gap: 12px; }
     .note { margin-top: 18px; font-size: 13.5px; color: var(--muted); }
 
-    /* Equalizer bars (the logo motif, alive) */
-    .eq { display: flex; align-items: flex-end; gap: 6px; height: 46px; margin-top: 38px; }
-    .eq i { width: 7px; border-radius: 4px; background: var(--grad); height: 30%; animation: eq 1.2s ease-in-out infinite alternate; opacity: .9; }
-    @keyframes eq { to { height: 100%; } }
+    /* Visualiseur : spectre (canvas) et forme d'onde (SVG) animés par assets/visualizer.js, sans aucun son */
+    .spectrum { position: absolute; left: 0; bottom: 0; width: 100%; height: 280px; z-index: -1; pointer-events: none; opacity: .6; }
+    .wave { display: block; width: min(420px, 100%); height: 60px; margin-top: 30px; overflow: visible; }
+    .wave path { fill: none; stroke: url(#wg); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+    .wave path.glow { stroke-width: 10; opacity: .16; }
+    /* Les boutons pulsent au survol, comme un haut-parleur */
+    .btn { position: relative; }
+    .btn::after { content: ""; position: absolute; inset: -1px; border-radius: inherit; border: 2px solid var(--ember); opacity: 0; pointer-events: none; }
+    .btn:hover::after, .btn:focus-visible::after { animation: pulse 1.15s ease-out infinite; }
+    @keyframes pulse { from { opacity: .7; transform: scale(1); } to { opacity: 0; transform: scale(1.1, 1.4); } }
 
     .stage { position: relative; }
     .stage .desk { border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(0, 0, 0, .4); transform: perspective(1400px) rotateY(-9deg) rotateX(3deg); transform-origin: left center; }
     .stage .phone { position: absolute; width: 27%; right: -3%; bottom: -16%; border-radius: 26px; border: 6px solid #231c18; box-shadow: 0 30px 70px -20px rgba(0, 0, 0, .95); }
 
     /* Sources strip */
-    .sources { margin: 90px 0 0; border-block: 1px solid var(--line); background: var(--bg-2); }
+    .sources { margin: 0; border-block: 1px solid var(--line); background: var(--bg-2); }
     .sources .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 34px; padding: 22px 0; color: var(--muted); font-weight: 700; font-size: 15px; }
     .sources span:first-child { font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: .12em; }
 
@@ -116,6 +122,7 @@
       .hero { padding-top: 56px; }
       .hero-grid, .split { grid-template-columns: 1fr; gap: 48px; }
       .stage { margin-bottom: 40px; }
+      .spectrum { height: 170px; }
       .stage .desk { transform: none; }
       .stage .phone { width: 24%; right: 2%; bottom: -16%; border-width: 4px; border-radius: 18px; }
       .features, .dl { grid-template-columns: 1fr 1fr; }
@@ -128,7 +135,7 @@
       section { padding-top: 76px; }
       .cta .btn { flex: 1 1 100%; }
     }
-    @media (prefers-reduced-motion: reduce) { .eq i { animation: none; } html { scroll-behavior: auto; } }
+    @media (prefers-reduced-motion: reduce) { .btn:hover::after, .btn:focus-visible::after { animation: none; } html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
@@ -152,6 +159,7 @@
 
   <main>
     <div class="hero">
+      <canvas class="spectrum" aria-hidden="true"></canvas>
       <div class="wrap hero-grid">
         <div>
           <span class="eyebrow">Version 0.4 · web, mobile et bureau</span>
@@ -162,7 +170,7 @@
             <a class="btn" href="#telecharger"><svg><use href="#i-down" /></svg>Télécharger les applications</a>
           </div>
           <p class="note">Lecteur privé : l'accès se fait avec un compte fourni sur invitation.</p>
-          <div class="eq" aria-hidden="true"></div>
+          <svg class="wave" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#ffb347" /><stop offset=".5" stop-color="#ff6a1a" /><stop offset="1" stop-color="#d7263d" /></linearGradient></defs><path class="glow" d="M0 30H400" /><path d="M0 30H400" /></svg>
         </div>
         <div class="stage">
           <img class="desk" src="assets/desk-search.webp" width="1600" height="1000" alt="Forge Audio sur ordinateur : résultats de recherche multi-sources et lecteur" />
@@ -342,6 +350,7 @@
     </div>
   </footer>
 
-  <script src="assets/site.js" defer></script>
+  <script src="assets/site.js?v=20261001" defer></script>
+  <script src="assets/visualizer.js?v=20261001" defer></script>
 </body>
 </html>
