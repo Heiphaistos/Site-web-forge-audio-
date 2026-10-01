@@ -3,7 +3,7 @@ import html, pathlib, re, sys
 
 SRC = pathlib.Path(__file__).parent / 'src'
 OUT = pathlib.Path(__file__).resolve().parents[2]  # racine du depot
-V = '20261001c'
+V = '20261002a'
 BASE = 'https://forgeaudio.heiphaistos.org'
 PLAYER = 'https://connect.forgeaudio.heiphaistos.org/'
 
