@@ -183,7 +183,7 @@ details a { color: var(--gold); }
 .feature-block { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 20px 48px; padding: 44px 0; border-top: 1px solid var(--line); }
 .feature-block h2 { font-size: clamp(24px, 2.6vw, 32px); }
 .feature-block > div > p { color: var(--muted); margin: 0; }
-.feats { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.feats { display: grid; grid-template-columns: repeat(auto-fill, minmax(max(min(100%, 260px), calc((100% - 2px) / 3)), 1fr)); /* 1, 2 ou 3 colonnes, jamais 4 : 6 cartes par grille remplissent toujours les lignes */ gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .feat { background: var(--bg); padding: 22px 22px 24px; min-width: 0; }
 .feat h3 { margin: 0 0 6px; font-size: 16.5px; }
 .feat p { margin: 0; color: var(--muted); font-size: 14.5px; }
