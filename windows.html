@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Installer Forge Audio sur Windows : guide pas à pas</title>
+  <meta name="description" content="Télécharger et installer Forge Audio sur Windows 10 et 11 : avertissement du navigateur, écran SmartScreen « Windows a protégé votre ordinateur », installation, mises à jour et désinstallation." />
+  <meta name="theme-color" content="#0b0908" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Forge Audio" />
+  <meta property="og:title" content="Installer Forge Audio sur Windows : guide pas à pas" />
+  <meta property="og:description" content="Télécharger et installer Forge Audio sur Windows 10 et 11 : avertissement du navigateur, écran SmartScreen « Windows a protégé votre ordinateur », installation, mises à jour et désinstallation." />
+  <meta property="og:image" content="https://forgeaudio.heiphaistos.org/assets/desk-search.webp" />
+  <link rel="canonical" href="https://forgeaudio.heiphaistos.org/windows.html" />
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/site.css?v=20261001b" />
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="full bar">
+      <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span><span class="sr-only"> : accueil</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg><span class="label">Menu</span></button>
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+          <li><a href="/telecharger.html" aria-current="true">Télécharger</a></li>
+          <li><a href="/nouveautes.html">Nouveautés</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/aide.html">Aide</a></li>
+        </ul>
+        <a class="btn btn-fire btn-sm" href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="page-head">
+      <div class="wrap narrow">
+        <nav class="crumbs" aria-label="Fil d’Ariane"><ol><li><a href="/">Accueil</a></li><li><a href="/telecharger.html">Télécharger</a></li><li><span aria-current="page">Windows</span></li></ol></nav>
+        <h1>Forge Audio sur <span class="grad">Windows</span></h1>
+        <p class="lead">Pour Windows 10 et Windows 11 (64 bits). Comptez cinq minutes. Windows va afficher un ou deux avertissements : c'est normal, et ce guide montre exactement où cliquer.</p>
+        <ul class="platforms" aria-label="Autres plateformes"><li><a href="/windows.html" aria-current="page">Windows</a></li><li><a href="/macos.html">macOS</a></li><li><a href="/linux.html">Linux</a></li><li><a href="/android.html">Android</a></li><li><a href="/ios.html">iPhone / iPad</a></li></ul>
+      </div>
+    </div>
+
+    <div class="wrap narrow prose">
+      <h2 id="choisir">1. Choisir et télécharger</h2>
+      <div class="choice">
+        <div class="card hot">
+          <span class="badge">Recommandé</span>
+          <h3>Installeur</h3>
+          <p>S'installe comme un logiciel classique, crée un raccourci sur le bureau et <b>se met à jour tout seul</b>.</p>
+          <div class="links"><a class="btn btn-fire" data-asset="win-x64-nsis.exe" href="https://github.com/Heiphaistos/Forge-audio-/releases/download/v0.12.2/ForgeAudio-0.12.2-win-x64-nsis.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>Télécharger l'installeur <small>112 Mo</small></a></div>
+        </div>
+        <div class="card">
+          <span class="badge">Sans installation</span>
+          <h3>Portable</h3>
+          <p>Un seul fichier à lancer, par exemple depuis une clé USB. Il ne se met <b>pas</b> à jour seul : il vous prévient, et vous retéléchargez le fichier.</p>
+          <div class="links"><a class="btn" data-asset="win-portable.exe" href="https://github.com/Heiphaistos/Forge-audio-/releases/download/v0.12.2/ForgeAudio-0.12.2-win-portable.exe">Télécharger la version portable <small>111 Mo</small></a></div>
+        </div>
+      </div>
+      <p class="meta" style="margin-top:12px">Version de bureau <span data-desk-version>0.12.2</span>. Les fichiers sont hébergés sur GitHub, dans les publications du projet.</p>
+
+      <ol class="steps">
+        <li>
+          <div>
+            <b>Si le navigateur affiche un avertissement, conservez le fichier.</b>
+            <p><b>Microsoft Edge</b> peut indiquer que le fichier <b>n'est pas couramment téléchargé</b>. Ouvrez les <b>Téléchargements</b> (icône flèche en haut à droite), cliquez sur les trois points <span class="ui">…</span> à côté du fichier, puis <span class="ui">Conserver</span>. Si Edge insiste, cliquez sur <span class="ui">Afficher plus</span> puis <span class="ui">Conserver quand même</span>.</p>
+            <p><b>Google Chrome</b> peut aussi signaler le fichier dans sa liste des téléchargements : ouvrez-la (Ctrl + J) et choisissez l'option qui conserve le fichier.</p>
+            <p>Pourquoi ? Ces navigateurs se méfient de tout programme encore peu téléchargé dans le monde. Forge Audio en fait partie.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 230" role="img" aria-label="Panneau Téléchargements de Microsoft Edge : le fichier n'est pas couramment téléchargé, menu trois points avec l'option Conserver">
+              <g font-family="Segoe UI, system-ui, sans-serif" font-size="12">
+                <rect x="6" y="6" width="348" height="218" rx="10" fill="#202020" stroke="#3a3a3a" />
+                <text x="22" y="34" fill="#fff" font-size="14" font-weight="600">Téléchargements</text>
+                <rect x="18" y="48" width="324" height="70" rx="8" fill="#2b2b2b" />
+                <path d="M34 66l10 18H24z" fill="#ffb900" /><text x="34" y="81" fill="#202020" font-size="11" font-weight="700" text-anchor="middle">!</text>
+                <text x="56" y="70" fill="#fff">ForgeAudio-…-win-x64-nsis.exe</text>
+                <text x="56" y="88" fill="#cfcfcf" font-size="11">n'est pas couramment téléchargé.</text>
+                <text x="56" y="104" fill="#cfcfcf" font-size="11">Vérifiez que vous lui faites confiance…</text>
+                <circle cx="318" cy="70" r="14" fill="none" stroke="#ff6a1a" stroke-width="2.5" />
+                <circle cx="312" cy="70" r="1.8" fill="#fff" /><circle cx="318" cy="70" r="1.8" fill="#fff" /><circle cx="324" cy="70" r="1.8" fill="#fff" />
+                <rect x="170" y="126" width="172" height="90" rx="8" fill="#2f2f2f" stroke="#454545" />
+                <text x="186" y="150" fill="#fff">Supprimer</text>
+                <rect x="176" y="160" width="160" height="26" rx="5" fill="rgba(255,106,26,.18)" stroke="#ff6a1a" stroke-width="2" />
+                <text x="186" y="178" fill="#fff" font-weight="600">Conserver</text>
+                <text x="186" y="206" fill="#fff">Signaler comme sûr</text>
+              </g>
+            </svg>
+            <figcaption>Schéma de l'avertissement d'Edge (le texte exact peut varier)</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Ouvrez le fichier téléchargé</b> : cliquez dessus dans la liste des téléchargements du navigateur, ou double-cliquez dessus dans le dossier <b>Téléchargements</b> de l'Explorateur de fichiers.
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 150" role="img" aria-label="Dossier Téléchargements avec le fichier ForgeAudio">
+              <g font-family="Segoe UI, system-ui, sans-serif" font-size="12">
+                <rect x="6" y="6" width="348" height="138" rx="10" fill="#202020" stroke="#3a3a3a" />
+                <path d="M22 26h20l5 6h25v20H22z" fill="#ffc83d" /><text x="84" y="44" fill="#fff" font-size="14" font-weight="600">Téléchargements</text>
+                <rect x="18" y="68" width="324" height="34" rx="6" fill="rgba(255,106,26,.16)" stroke="#ff6a1a" stroke-width="2" />
+                <rect x="30" y="76" width="18" height="18" rx="4" fill="#ff6a1a" /><path d="M35 90V80h8M35 85h5" stroke="#160a03" stroke-width="2" fill="none" />
+                <text x="58" y="90" fill="#fff">ForgeAudio-…-win-x64-nsis.exe</text>
+                <text x="30" y="128" fill="#a0a0a0" font-size="11">Double-cliquez pour l'ouvrir</text>
+              </g>
+            </svg>
+            <figcaption>Le fichier dans le dossier Téléchargements</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Écran bleu « Windows a protégé votre ordinateur » : cliquez sur <span class="ui">Informations complémentaires</span>.</b>
+            <p>C'est <b>Microsoft Defender SmartScreen</b>. Il s'affiche pour toute application qu'il ne connaît pas encore, surtout si elle n'est pas signée par un certificat payant. Sur Windows 11, le titre peut être « Windows a protégé votre PC ». Ne cliquez pas sur <span class="ui">Ne pas exécuter</span> : cela annule simplement.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 230" role="img" aria-label="Fenêtre SmartScreen bleue : Windows a protégé votre ordinateur, lien Informations complémentaires entouré">
+              <g font-family="Segoe UI, system-ui, sans-serif">
+                <rect x="6" y="6" width="348" height="218" rx="4" fill="#0067b8" />
+                <text x="330" y="28" fill="#fff" font-size="14" text-anchor="end">✕</text>
+                <text x="24" y="54" fill="#fff" font-size="17" font-weight="600">Windows a protégé votre</text>
+                <text x="24" y="76" fill="#fff" font-size="17" font-weight="600">ordinateur</text>
+                <text x="24" y="104" fill="#e6f0fa" font-size="11.5">Microsoft Defender SmartScreen a empêché le</text>
+                <text x="24" y="120" fill="#e6f0fa" font-size="11.5">démarrage d'une application non reconnue…</text>
+                <rect x="18" y="134" width="170" height="26" rx="4" fill="none" stroke="#ffb347" stroke-width="2.5" />
+                <text x="26" y="152" fill="#fff" font-size="12.5" text-decoration="underline">Informations complémentaires</text>
+                <rect x="232" y="182" width="108" height="30" fill="#0067b8" stroke="#fff" stroke-width="1.5" />
+                <text x="286" y="202" fill="#fff" font-size="12.5" text-anchor="middle">Ne pas exécuter</text>
+              </g>
+            </svg>
+            <figcaption>Schéma de l'écran SmartScreen</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Cliquez sur <span class="ui">Exécuter quand même</span>.</b>
+            <p>Le même écran affiche maintenant le nom du fichier et « Éditeur : Éditeur inconnu », avec un nouveau bouton. Windows ne le demandera plus pour ce fichier.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 230" role="img" aria-label="Fenêtre SmartScreen dépliée : application, éditeur inconnu, bouton Exécuter quand même entouré">
+              <g font-family="Segoe UI, system-ui, sans-serif">
+                <rect x="6" y="6" width="348" height="218" rx="4" fill="#0067b8" />
+                <text x="24" y="44" fill="#fff" font-size="17" font-weight="600">Windows a protégé votre</text>
+                <text x="24" y="66" fill="#fff" font-size="17" font-weight="600">ordinateur</text>
+                <text x="24" y="104" fill="#e6f0fa" font-size="11.5">Application : ForgeAudio-…-win-x64-nsis.exe</text>
+                <text x="24" y="122" fill="#e6f0fa" font-size="11.5">Éditeur : Éditeur inconnu</text>
+                <rect x="96" y="176" width="126" height="34" rx="2" fill="none" stroke="#ffb347" stroke-width="2.5" />
+                <rect x="100" y="180" width="118" height="26" fill="#0067b8" stroke="#fff" stroke-width="1.5" />
+                <text x="159" y="198" fill="#fff" font-size="12" text-anchor="middle">Exécuter quand même</text>
+                <rect x="232" y="180" width="108" height="26" fill="#0067b8" stroke="#fff" stroke-width="1.5" />
+                <text x="286" y="198" fill="#fff" font-size="12" text-anchor="middle">Ne pas exécuter</text>
+              </g>
+            </svg>
+            <figcaption>Le bouton apparaît après « Informations complémentaires »</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Suivez l'assistant d'installation</b> (installeur seulement).
+            <p>Il demande pour qui installer Forge Audio et dans quel dossier : les choix proposés conviennent. Cliquez sur <b>Suivant</b>, puis <b>Installer</b>, puis <b>Terminer</b>. Windows peut demander l'autorisation d'apporter des modifications : répondez <span class="ui">Oui</span>.</p>
+            <p>La version portable, elle, s'ouvre directement : pas d'assistant.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 200" role="img" aria-label="Assistant d'installation de Forge Audio avec les boutons Précédent, Suivant et Annuler">
+              <g font-family="Segoe UI, system-ui, sans-serif" font-size="12">
+                <rect x="6" y="6" width="348" height="188" rx="6" fill="#f3f3f3" />
+                <rect x="6" y="6" width="348" height="54" rx="6" fill="#fff" /><rect x="6" y="40" width="348" height="20" fill="#fff" />
+                <text x="20" y="30" fill="#111" font-weight="700">Installation de Forge Audio</text>
+                <text x="20" y="48" fill="#555" font-size="11">Choisissez les options d'installation</text>
+                <rect x="300" y="16" width="36" height="36" rx="8" fill="#140f0c" /><path d="M310 44V24h18M310 34h12" stroke="#ff6a1a" stroke-width="4" fill="none" stroke-linecap="round" />
+                <circle cx="30" cy="86" r="6" fill="#fff" stroke="#0067b8" stroke-width="2" /><circle cx="30" cy="86" r="3" fill="#0067b8" />
+                <text x="44" y="90" fill="#222">Pour moi uniquement</text>
+                <circle cx="30" cy="110" r="6" fill="#fff" stroke="#888" stroke-width="1.5" />
+                <text x="44" y="114" fill="#222">Pour tous les utilisateurs</text>
+                <rect x="96" y="156" width="74" height="26" rx="3" fill="#e5e5e5" stroke="#bbb" /><text x="133" y="173" fill="#222" text-anchor="middle">Précédent</text>
+                <rect x="176" y="152" width="82" height="34" rx="4" fill="none" stroke="#ff6a1a" stroke-width="2.5" />
+                <rect x="180" y="156" width="74" height="26" rx="3" fill="#0067b8" /><text x="217" y="173" fill="#fff" text-anchor="middle">Suivant</text>
+                <rect x="266" y="156" width="74" height="26" rx="3" fill="#e5e5e5" stroke="#bbb" /><text x="303" y="173" fill="#222" text-anchor="middle">Annuler</text>
+              </g>
+            </svg>
+            <figcaption>Schéma simplifié de l'assistant (libellés selon la langue de Windows)</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Lancez Forge Audio et connectez-vous.</b>
+            <p>L'icône est sur le bureau et dans le menu Démarrer. L'application s'ouvre sur la page de connexion du serveur <code>connect.forgeaudio.heiphaistos.org</code> : onglet <span class="ui">Se connecter</span> si vous avez un compte, ou <span class="ui">Créer un compte</span> avec votre code d'invitation.</p>
+            <p>Au tout premier lancement, l'application peut prendre quelques secondes de plus : elle prépare ses outils de lecture.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 200" role="img" aria-label="Page de connexion de Forge Audio : onglets Se connecter et Créer un compte">
+              <g font-family="system-ui, sans-serif" font-size="12">
+                <rect x="6" y="6" width="348" height="188" rx="14" fill="#17120f" stroke="rgba(255,236,220,.12)" />
+                <rect x="140" y="18" width="80" height="20" rx="6" fill="none" /><path d="M164 36V22h14M164 29h9" stroke="#ff6a1a" stroke-width="3" fill="none" stroke-linecap="round" /><text x="186" y="34" fill="#f6f1ec" font-weight="800">Forge Audio</text>
+                <rect x="40" y="50" width="280" height="30" rx="15" fill="#0b0908" />
+                <rect x="43" y="53" width="136" height="24" rx="12" fill="#ff6a1a" /><text x="111" y="70" fill="#160a03" font-weight="700" text-anchor="middle">Se connecter</text>
+                <text x="250" y="70" fill="#a89d94" text-anchor="middle">Créer un compte</text>
+                <text x="42" y="102" fill="#f6f1ec">Identifiant</text>
+                <rect x="40" y="108" width="280" height="26" rx="8" fill="#0b0908" stroke="rgba(255,236,220,.15)" />
+                <text x="42" y="152" fill="#f6f1ec">Mot de passe</text>
+                <rect x="40" y="158" width="280" height="26" rx="8" fill="#0b0908" stroke="rgba(255,236,220,.15)" />
+              </g>
+            </svg>
+            <figcaption>La page de connexion</figcaption>
+          </figure>
+        </li>
+      </ol>
+
+      <h2 id="antivirus">Si un antivirus bloque ou supprime le fichier</h2>
+      <p>Un antivirus peut se méfier d'une application récente et non signée, sans qu'elle soit dangereuse. Vérifiez d'abord que vous avez bien téléchargé le fichier avec les boutons de <b>cette page</b>, qui mènent aux publications officielles du projet sur GitHub (<code>github.com/Heiphaistos/Forge-audio-</code>).</p>
+      <ul>
+        <li><b>Microsoft Defender</b> : ouvrez <span class="ui">Sécurité Windows</span> → <span class="ui">Protection contre les virus et menaces</span> → <span class="ui">Historique de protection</span>. Vous y voyez l'élément bloqué et pouvez choisir de l'autoriser si vous lui faites confiance.</li>
+        <li><b>Autre antivirus</b> : regardez sa quarantaine ou son journal, restaurez le fichier et ajoutez une exception.</li>
+        <li>Dans le doute, ne forcez pas : <a href="/aide.html">écrivez-nous</a>, ou utilisez le <a href="https://connect.forgeaudio.heiphaistos.org/">lecteur web</a> qui ne demande aucune installation.</li>
+      </ul>
+
+      <h2 id="mises-a-jour">Mises à jour</h2>
+      <div class="box ok">
+        <p><b>Installeur : automatiques.</b> Forge Audio vérifie les nouvelles versions, les télécharge en arrière-plan et les installe en silence quand vous fermez l'application. Une fenêtre « Mise à jour prête » propose aussi <span class="ui">Redémarrer</span> pour l'installer tout de suite, ou <span class="ui">Plus tard</span>.</p>
+      </div>
+      <div class="box">
+        <p><b>Version portable : avis seulement.</b> Elle ne peut pas se remplacer elle-même. Quand une version sort, une fenêtre vous prévient avec un bouton <span class="ui">Télécharger</span> : récupérez le nouveau fichier et supprimez l'ancien. Vos playlists sont sur le serveur, vous ne perdez rien.</p>
+      </div>
+      <p>Bon à savoir : fermer la fenêtre <b>quitte</b> Forge Audio. Pour que la musique continue fenêtre fermée, cochez la lecture en arrière-plan dans le menu de l'icône Forge Audio, près de l'horloge.</p>
+
+      <h2 id="desinstaller">Désinstaller</h2>
+      <ol>
+        <li><b>Windows 11</b> : <span class="ui">Démarrer</span> → <span class="ui">Paramètres</span> → <span class="ui">Applications</span> → <span class="ui">Applications installées</span>. Cherchez <b>Forge Audio</b>, cliquez sur <span class="ui">…</span> puis <span class="ui">Désinstaller</span>.</li>
+        <li><b>Windows 10</b> : <span class="ui">Démarrer</span> → <span class="ui">Paramètres</span> → <span class="ui">Applications</span> → <span class="ui">Applications et fonctionnalités</span>, cliquez sur <b>Forge Audio</b> puis <span class="ui">Désinstaller</span>.</li>
+        <li><b>Version portable</b> : supprimez simplement le fichier.</li>
+      </ol>
+      <p>Votre compte, vos playlists et votre historique restent sur le serveur.</p>
+
+      <h2 id="sources" style="font-size:22px">Sources</h2>
+      <p class="meta">Étapes vérifiées le 1er octobre 2026. Les fenêtres de Windows et des navigateurs peuvent changer d'une version à l'autre ; les schémas ci-dessus sont simplifiés.</p>
+      <ul class="sources-list">
+        <li>Microsoft Learn, « <a href="https://learn.microsoft.com/fr-fr/windows/security/operating-system-security/virus-and-threat-protection/microsoft-defender-smartscreen/" rel="noopener">Vue d'ensemble de Microsoft Defender SmartScreen</a> » (réputation des applications et des fichiers peu téléchargés).</li>
+        <li>Microsoft Learn, « <a href="https://learn.microsoft.com/fr-fr/troubleshoot/microsoft-edge/development/download-failures" rel="noopener">Résoudre les échecs de téléchargement dans Microsoft Edge</a> » (menu … du téléchargement, conserver, Afficher plus, conserver quand même ; Historique de protection). La traduction de cette page écrit « Garder » là où Edge en français affiche « Conserver ».</li>
+        <li>Microsoft Support, « <a href="https://support.microsoft.com/fr-fr/microsoft-edge/comment-smartscreen-peut-il-m-aider-%C3%A0-me-prot%C3%A9ger-dans-microsoft-edge-1c9a874a-6826-be5e-45b1-67fa445a74c8" rel="noopener">Comment SmartScreen peut-il m'aider à me protéger dans Microsoft Edge ?</a> ».</li>
+        <li>Microsoft Support, « <a href="https://support.microsoft.com/fr-fr/windows/d%C3%A9sinstaller-ou-supprimer-des-applications-et-des-programmes-dans-windows-4b55f974-2cc6-2d2b-d092-5905080eaf98" rel="noopener">Désinstaller ou supprimer des applications et des programmes dans Windows</a> ».</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span></a>
+          <p>Lecteur musical sans publicité, sur le web, le téléphone et l'ordinateur. Projet personnel, code ouvert sous licence MIT.</p>
+        </div>
+        <div>
+          <h2>Produit</h2>
+          <ul>
+            <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+            <li><a href="/nouveautes.html">Nouveautés</a></li>
+            <li><a href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a></li>
+            <li><a href="https://github.com/Heiphaistos/Forge-audio-">Code source</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Télécharger</h2>
+          <ul>
+            <li><a href="/windows.html">Windows</a></li>
+            <li><a href="/macos.html">macOS</a></li>
+            <li><a href="/linux.html">Linux</a></li>
+            <li><a href="/android.html">Android</a></li>
+            <li><a href="/ios.html">iPhone et iPad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Aide</h2>
+          <ul>
+            <li><a href="/faq.html">Questions fréquentes</a></li>
+            <li><a href="/aide.html">Aide et contact</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+            <li><a href="/confidentialite.html">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 Forge Audio · Heiphaistos. Aucun cookie, aucune publicité, aucune mesure d'audience.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/nav.js?v=20261001b" defer></script>
+  <script src="/assets/site.js?v=20261001b" defer></script>
+</body>
+</html>

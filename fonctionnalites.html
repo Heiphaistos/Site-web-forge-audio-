@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Fonctionnalités : Forge Audio</title>
+  <meta name="description" content="Tout ce que fait Forge Audio : recherche multi-sources, liens Spotify et Deezer, paroles, vidéo, égaliseur, playlists partagées, Jam, amis, messages privés, synchronisation et applications." />
+  <meta name="theme-color" content="#0b0908" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Forge Audio" />
+  <meta property="og:title" content="Fonctionnalités : Forge Audio" />
+  <meta property="og:description" content="Tout ce que fait Forge Audio : recherche multi-sources, liens Spotify et Deezer, paroles, vidéo, égaliseur, playlists partagées, Jam, amis, messages privés, synchronisation et applications." />
+  <meta property="og:image" content="https://forgeaudio.heiphaistos.org/assets/desk-search.webp" />
+  <link rel="canonical" href="https://forgeaudio.heiphaistos.org/fonctionnalites.html" />
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/site.css?v=20261001b" />
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="full bar">
+      <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span><span class="sr-only"> : accueil</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg><span class="label">Menu</span></button>
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/fonctionnalites.html" aria-current="page">Fonctionnalités</a></li>
+          <li><a href="/telecharger.html">Télécharger</a></li>
+          <li><a href="/nouveautes.html">Nouveautés</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/aide.html">Aide</a></li>
+        </ul>
+        <a class="btn btn-fire btn-sm" href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>Tout ce que fait <span class="grad">Forge Audio</span></h1>
+        <p class="lead">Un lecteur pensé comme les grands services de streaming, sans publicité et sans abonnement. Voici ce qu'il sait faire aujourd'hui, dans le lecteur web comme dans les applications.</p>
+        <nav class="toc" aria-label="Sur cette page"><b>Sur cette page</b><a href="#lecteur">Le lecteur</a><a href="#sources">Sources et liens</a><a href="#decouvrir">Découvrir</a><a href="#bibliotheque">Bibliothèque</a><a href="#social">Amis et Jam</a><a href="#son">Son et vidéo</a><a href="#applis">Applications</a><a href="#bientot">Bientôt</a></nav>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="feature-block" id="lecteur">
+        <div><h2>Le lecteur</h2><p>Ce que vous utilisez à chaque écoute.</p></div>
+        <div class="feats">
+          <div class="feat"><h3>Lecture sans coupure</h3><p>Aucune publicité, ni au début ni entre les titres. File d'attente, lecture aléatoire, répétition.</p></div>
+          <div class="feat"><h3>Paroles synchronisées</h3><p>Les paroles défilent avec la musique (base ouverte LRCLIB) ; touchez une ligne pour y aller.</p></div>
+          <div class="feat"><h3>Lecteur agrandi</h3><p>Grande pochette, paroles, file d'attente, et « Ce titre est dans » : les playlists qui le contiennent déjà.</p></div>
+          <div class="feat"><h3>Radio automatique</h3><p>En fin de file, la lecture enchaîne sur des titres proches de ce que vous écoutiez.</p></div>
+          <div class="feat"><h3>Raccourcis et touches média</h3><p>Clavier, touches multimédia, écran de verrouillage, casque et Bluetooth. Touche J pour aimer le titre en cours.</p></div>
+          <div class="feat"><h3>Minuteur de sommeil</h3><p>La musique s'arrête toute seule à l'heure choisie.</p></div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="sources">
+        <div><h2>Sources et liens</h2><p>Cherchez partout à la fois, ou collez simplement un lien.</p></div>
+        <div class="feats">
+          <div class="feat"><h3>Recherche multi-sources</h3><p>YouTube, YouTube Music, SoundCloud et Dailymotion en une seule recherche, avec des onglets Titres, Artistes, Albums et Playlists.</p></div>
+          <div class="feat"><h3>Liens Spotify, Deezer, Apple Music</h3><p>Collez un titre, un album ou une playlist : Forge Audio retrouve chaque morceau et le joue. Les playlists Spotify sont limitées à 100 titres.</p></div>
+          <div class="feat"><h3>Plus de mille sites</h3><p>YouTube, SoundCloud, Bandcamp, Dailymotion et la plupart des sites lus par yt-dlp, l'outil libre qui fait le travail.</p></div>
+          <div class="feat"><h3>Import de playlists</h3><p>Une playlist YouTube de plusieurs centaines de titres s'importe d'un clic dans votre bibliothèque.</p></div>
+          <div class="feat"><h3>Téléchargements</h3><p>MP3 320 kbit/s avec titre, artiste et pochette, audio d'origine ou vidéo MP4.</p></div>
+          <div class="feat"><h3>Liens de partage</h3><p>Partagez un titre avec un lien : votre ami l'ouvre directement dans son lecteur après connexion.</p></div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="decouvrir">
+        <div><h2>Découvrir</h2><p>Des pages pour explorer, pas seulement une barre de recherche.</p></div>
+        <div class="feats">
+          <div class="feat"><h3>Pages Artiste et Album</h3><p>Titres les plus écoutés, discographie (albums et singles), artistes similaires et biographie.</p></div>
+          <div class="feat"><h3>Recommandations</h3><p>Mix par artiste, Découvertes de la semaine et Radar des sorties récentes, calculés d'après vos écoutes et vos likes.</p></div>
+          <div class="feat"><h3>Genres</h3><p>Une trentaine de genres, chacun avec ses playlists officielles et des mix de la communauté.</p></div>
+          <div class="feat"><h3>Vos statistiques</h3><p>Temps d'écoute, artistes et titres préférés, heure à laquelle vous écoutez le plus.</p></div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="bibliotheque">
+        <div><h2>Votre bibliothèque</h2><p>Sauvegardée sur le serveur, la même sur chaque appareil où vous vous connectez.</p></div>
+        <div class="feats">
+          <div class="feat"><h3>Synchronisation</h3><p>Playlists, titres likés, artistes suivis, historique, file d'attente et réglages se retrouvent partout, automatiquement.</p></div>
+          <div class="feat"><h3>Titres likés et artistes suivis</h3><p>Le cœur est toujours à portée de main ; la page des likes se filtre et se trie, et un like retiré ne revient plus.</p></div>
+          <div class="feat"><h3>Playlists à votre façon</h3><p>Dossiers, épinglage, image de couverture, fusion de plusieurs playlists (doublons retirés), playlist créée depuis vos likes.</p></div>
+          <div class="feat"><h3>Sélection multiple</h3><p>Ctrl, Maj ou appui long : ajoutez, retirez ou déplacez plusieurs titres d'un coup.</p></div>
+          <div class="feat"><h3>Masquer</h3><p>Un titre ou un artiste que vous ne voulez plus entendre disparaît de la radio et des recommandations.</p></div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="social">
+        <div><h2>Amis, Jam et messages</h2><p>Tout ce qui est social se fait entre amis : personne d'autre ne voit ce que vous écoutez.</p></div>
+        <div class="feats">
+          <div class="feat"><h3>Amis</h3><p>Ajoutez un ami par son identifiant, acceptez ou refusez une demande, retirez ou bloquez quelqu'un.</p></div>
+          <div class="feat"><h3>Jam</h3><p>Écoutez la même musique au même moment, jusqu'à 50 personnes. L'hôte garde la main ou laisse tout le monde choisir, avec une discussion intégrée.</p></div>
+          <div class="feat"><h3>Messages privés</h3><p>Discutez avec vos amis, avec l'indication « vu ». Un message supprimé des deux côtés est effacé du serveur.</p></div>
+          <div class="feat"><h3>Playlists partagées</h3><p>Invitez vos amis dans une playlist : chacun ajoute ses titres, le propriétaire gère les membres.</p></div>
+          <div class="feat"><h3>Activité des amis et Blend</h3><p>Voyez ce que vos amis écoutent, et créez un Blend : une playlist qui mélange vos goûts. Désactivable dans les Paramètres.</p></div>
+          <div class="feat"><h3>Lien avec Discord</h3><p>Reliez votre compte au bot HeiphaisBot : mêmes titres likés, playlists jouées dans un salon vocal.</p></div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="son">
+        <div><h2>Son et vidéo</h2><p>Le son reste intact si vous ne touchez à rien.</p></div>
+        <div class="feats">
+          <div class="feat"><h3>Fondu enchaîné et sans blanc</h3><p>Fondu réglable jusqu'à 12 secondes, ou enchaînement sans silence entre les titres.</p></div>
+          <div class="feat"><h3>Volume harmonisé</h3><p>Les titres trop forts sont baissés au même niveau sonore, pour ne plus toucher au volume.</p></div>
+          <div class="feat"><h3>Égaliseur 10 bandes</h3><p>Dix préréglages, visualiseur, vitesse de 0,5× à 2×.</p></div>
+          <div class="feat"><h3>Qualité et économie de données</h3><p>Qualité élevée, normale ou basse, et mode économie automatique sur données mobiles.</p></div>
+          <div class="feat"><h3>Vidéo synchronisée</h3><p>Le clip jusqu'en 1080p sans couper le son : plein écran, lecteur réduit flottant ou image dans l'image.</p></div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="applis">
+        <div><h2>Les applications</h2><p>Le lecteur web suffit pour commencer ; les applications ajoutent l'arrière-plan et les mises à jour.</p></div>
+        <div class="feats">
+          <div class="feat"><h3>Android</h3><p>Lecture écran éteint, notification avec pochette et commandes, touches du casque, partage vers Forge Audio, mises à jour intégrées vérifiées. <a href="/android.html">Installer</a></p></div>
+          <div class="feat"><h3>iPhone et iPad</h3><p>Ajout à l'écran d'accueil depuis Safari en une minute, ou application à signer soi-même. <a href="/ios.html">Installer</a></p></div>
+          <div class="feat"><h3>Windows, macOS, Linux</h3><p>Application de bureau avec touches multimédia et lecture en arrière-plan en option ; mise à jour automatique sous Windows (installeur) et Linux. <a href="/telecharger.html">Installer</a></p></div>
+          <div class="feat"><h3>Lecteur web</h3><p>Rien à installer, depuis n'importe quel navigateur récent. <a href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir</a></p></div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="bientot">
+        <div><h2>Bientôt</h2><p>En préparation, pas encore disponible.</p></div>
+        <div class="feats">
+          <div class="feat"><h3>Profils <span class="soon">à venir</span></h3><p>Une page de profil pour chaque compte, visible par vos amis.</p></div>
+          <div class="feat"><h3>Paroles traduites et karaoké <span class="soon">à venir</span></h3><p>Traduction des paroles et mode karaoké.</p></div>
+          <div class="feat"><h3>Hors ligne <span class="soon">à venir</span></h3><p>Écouter sans connexion sur Android et dans le navigateur.</p></div>
+          <div class="feat"><h3>Télécommande et Chromecast <span class="soon">à venir</span></h3><p>Piloter la lecture d'un appareil depuis un autre, diffuser sur une enceinte ou une télé.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="card hot">
+          <h3>Envie d'essayer ?</h3>
+          <p>Forge Audio est gratuit. Il vous faut seulement un code d'invitation pour créer votre compte.</p>
+          <div class="links"><a class="btn btn-fire" href="/telecharger.html">Télécharger</a><a class="btn" href="/faq.html#compte">Obtenir un compte</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span></a>
+          <p>Lecteur musical sans publicité, sur le web, le téléphone et l'ordinateur. Projet personnel, code ouvert sous licence MIT.</p>
+        </div>
+        <div>
+          <h2>Produit</h2>
+          <ul>
+            <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+            <li><a href="/nouveautes.html">Nouveautés</a></li>
+            <li><a href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a></li>
+            <li><a href="https://github.com/Heiphaistos/Forge-audio-">Code source</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Télécharger</h2>
+          <ul>
+            <li><a href="/windows.html">Windows</a></li>
+            <li><a href="/macos.html">macOS</a></li>
+            <li><a href="/linux.html">Linux</a></li>
+            <li><a href="/android.html">Android</a></li>
+            <li><a href="/ios.html">iPhone et iPad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Aide</h2>
+          <ul>
+            <li><a href="/faq.html">Questions fréquentes</a></li>
+            <li><a href="/aide.html">Aide et contact</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+            <li><a href="/confidentialite.html">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 Forge Audio · Heiphaistos. Aucun cookie, aucune publicité, aucune mesure d'audience.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/nav.js?v=20261001b" defer></script>
+  <script src="/assets/site.js?v=20261001b" defer></script>
+</body>
+</html>

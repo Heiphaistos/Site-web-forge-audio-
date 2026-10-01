@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Installer Forge Audio sur Linux : AppImage, .deb, .rpm</title>
+  <meta name="description" content="Installer Forge Audio sur Linux : AppImage à rendre exécutable, paquet .deb pour Debian, Ubuntu et Mint, paquet .rpm pour Fedora et openSUSE, mises à jour automatiques et désinstallation." />
+  <meta name="theme-color" content="#0b0908" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Forge Audio" />
+  <meta property="og:title" content="Installer Forge Audio sur Linux : AppImage, .deb, .rpm" />
+  <meta property="og:description" content="Installer Forge Audio sur Linux : AppImage à rendre exécutable, paquet .deb pour Debian, Ubuntu et Mint, paquet .rpm pour Fedora et openSUSE, mises à jour automatiques et désinstallation." />
+  <meta property="og:image" content="https://forgeaudio.heiphaistos.org/assets/desk-search.webp" />
+  <link rel="canonical" href="https://forgeaudio.heiphaistos.org/linux.html" />
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/site.css?v=20261001b" />
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="full bar">
+      <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span><span class="sr-only"> : accueil</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg><span class="label">Menu</span></button>
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+          <li><a href="/telecharger.html" aria-current="true">Télécharger</a></li>
+          <li><a href="/nouveautes.html">Nouveautés</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/aide.html">Aide</a></li>
+        </ul>
+        <a class="btn btn-fire btn-sm" href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="page-head">
+      <div class="wrap narrow">
+        <nav class="crumbs" aria-label="Fil d’Ariane"><ol><li><a href="/">Accueil</a></li><li><a href="/telecharger.html">Télécharger</a></li><li><span aria-current="page">Linux</span></li></ol></nav>
+        <h1>Forge Audio sur <span class="grad">Linux</span></h1>
+        <p class="lead">Trois formats pour les PC 64 bits (x86_64). Prenez le paquet de votre distribution si vous le connaissez ; sinon, l'AppImage marche presque partout.</p>
+        <ul class="platforms" aria-label="Autres plateformes"><li><a href="/windows.html">Windows</a></li><li><a href="/macos.html">macOS</a></li><li><a href="/linux.html" aria-current="page">Linux</a></li><li><a href="/android.html">Android</a></li><li><a href="/ios.html">iPhone / iPad</a></li></ul>
+      </div>
+    </div>
+
+    <div class="wrap narrow prose">
+      <h2 id="choisir">1. Choisir le bon fichier</h2>
+      <div class="choice">
+        <div class="card">
+          <span class="badge">Debian, Ubuntu, Linux Mint, Pop!_OS</span>
+          <h3>Paquet .deb</h3>
+          <p>S'installe comme les autres logiciels, apparaît dans le menu des applications.</p>
+          <div class="links"><a class="btn" data-asset="linux-amd64.deb" href="https://github.com/Heiphaistos/Forge-audio-/releases/download/v0.12.2/ForgeAudio-0.12.2-linux-amd64.deb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>Télécharger le .deb <small>111 Mo</small></a></div>
+        </div>
+        <div class="card">
+          <span class="badge">Fedora, openSUSE, RHEL</span>
+          <h3>Paquet .rpm</h3>
+          <p>Même chose pour les distributions de la famille Red Hat et SUSE.</p>
+          <div class="links"><a class="btn" data-asset="linux-x86_64.rpm" href="https://github.com/Heiphaistos/Forge-audio-/releases/download/v0.12.2/ForgeAudio-0.12.2-linux-x86_64.rpm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>Télécharger le .rpm <small>98 Mo</small></a></div>
+        </div>
+        <div class="card">
+          <span class="badge">Toutes distributions</span>
+          <h3>AppImage</h3>
+          <p>Un seul fichier, rien à installer : on le rend exécutable et on le lance.</p>
+          <div class="links"><a class="btn" data-asset="linux-x86_64.AppImage" href="https://github.com/Heiphaistos/Forge-audio-/releases/download/v0.12.2/ForgeAudio-0.12.2-linux-x86_64.AppImage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>Télécharger l'AppImage <small>142 Mo</small></a></div>
+        </div>
+      </div>
+      <p class="meta" style="margin-top:12px">Version de bureau <span data-desk-version>0.12.2</span>, fichiers hébergés sur GitHub. Vous ne savez pas quelle distribution vous avez ? Tapez <code>cat /etc/os-release</code> dans un terminal : la ligne <code>NAME</code> le dit.</p>
+
+      <h2 id="deb">Installer le .deb (Debian, Ubuntu, Mint)</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <b>Ouvrez un terminal dans le dossier Téléchargements</b> : dans le gestionnaire de fichiers, clic droit dans le dossier → <span class="ui">Ouvrir dans un terminal</span>. Ou ouvrez un terminal (<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> sur Ubuntu et Mint) et tapez <code>cd ~/Téléchargements</code> (ou <code>cd ~/Downloads</code> si votre système est en anglais).
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 150" role="img" aria-label="Gestionnaire de fichiers : clic droit, Ouvrir dans un terminal">
+              <g font-family="Ubuntu, Cantarell, system-ui, sans-serif" font-size="12">
+                <rect x="6" y="6" width="348" height="138" rx="12" fill="#2b2b2b" stroke="#404040" />
+                <text x="22" y="32" fill="#fff" font-weight="700">Téléchargements</text>
+                <rect x="22" y="48" width="40" height="48" rx="4" fill="#e95420" opacity=".85" /><text x="42" y="112" fill="#ccc" text-anchor="middle" font-size="9">ForgeAudio…deb</text>
+                <rect x="170" y="44" width="176" height="92" rx="8" fill="#383838" stroke="#4a4a4a" />
+                <text x="184" y="66" fill="#eee">Nouveau dossier</text>
+                <text x="184" y="90" fill="#eee">Coller</text>
+                <rect x="176" y="102" width="164" height="26" rx="5" fill="rgba(255,106,26,.18)" stroke="#ff6a1a" stroke-width="2" />
+                <text x="184" y="120" fill="#fff" font-weight="600">Ouvrir dans un terminal</text>
+              </g>
+            </svg>
+            <figcaption>Clic droit dans un espace vide du dossier</figcaption>
+          </figure>
+        </li>
+        <li>
+          <div>
+            <b>Installez le paquet</b> en tapant (ou en collant avec <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>V</kbd>) :
+            <pre><code>sudo apt install ./ForgeAudio-*-linux-amd64.deb</code></pre>
+            <p>Le <code>./</code> devant le nom est indispensable : il dit à <code>apt</code> d'installer ce fichier-là plutôt que de chercher un paquet en ligne. <code>sudo</code> demande votre mot de passe ; rien ne s'affiche pendant que vous le tapez, c'est normal. Confirmez avec <kbd>O</kbd> (ou <kbd>Y</kbd>) puis <kbd>Entrée</kbd> si on vous le demande.</p>
+            <p>Sans terminal : sur beaucoup de distributions, un double-clic sur le .deb ouvre un installeur graphique (Logithèque, Installateur de paquets…).</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 140" role="img" aria-label="Terminal avec la commande sudo apt install">
+              <g font-family="ui-monospace, Ubuntu Mono, monospace" font-size="11">
+                <rect x="6" y="6" width="348" height="128" rx="10" fill="#300a24" stroke="#4a4a4a" />
+                <text x="16" y="34" fill="#8ae234">vous@pc</text><text x="70" y="34" fill="#fff">:</text><text x="78" y="34" fill="#729fcf">~/Téléchargements</text><text x="198" y="34" fill="#fff">$</text>
+                <text x="16" y="54" fill="#fff">sudo apt install ./ForgeAudio-*-amd64.deb</text>
+                <text x="16" y="76" fill="#fff">[sudo] Mot de passe de vous :</text>
+                <text x="16" y="98" fill="#ccc">Paramétrage de forge-audio-desktop…</text>
+                <text x="16" y="120" fill="#8ae234">vous@pc</text><text x="70" y="120" fill="#fff">:~$</text>
+              </g>
+            </svg>
+            <figcaption>Le mot de passe ne s'affiche pas quand on le tape</figcaption>
+          </figure>
+        </li>
+        <li class="text">
+          <div>
+            <b>Lancez Forge Audio</b> depuis le menu des applications (catégorie Son et vidéo / Multimédia) et connectez-vous, ou créez votre compte avec votre code d'invitation.
+          </div>
+        </li>
+      </ol>
+
+      <h2 id="rpm">Installer le .rpm (Fedora, openSUSE)</h2>
+      <ol class="steps">
+        <li class="text">
+          <div>
+            <b>Ouvrez un terminal dans le dossier Téléchargements</b>, comme pour le .deb, puis tapez :
+            <pre><code>sudo dnf install ./ForgeAudio-*-linux-x86_64.rpm</code></pre>
+            <p>Sur <b>openSUSE</b> : <code>sudo zypper install ./ForgeAudio-*-linux-x86_64.rpm</code>. Tapez votre mot de passe, confirmez avec <kbd>o</kbd> ou <kbd>y</kbd>. Sur Fedora, un double-clic sur le fichier ouvre aussi Logiciels (GNOME Software).</p>
+          </div>
+        </li>
+        <li class="text">
+          <div><b>Lancez Forge Audio</b> depuis le menu des applications et connectez-vous.</div>
+        </li>
+      </ol>
+
+      <h2 id="appimage">Lancer l'AppImage</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <b>Rendez le fichier exécutable</b> : clic droit sur le fichier AppImage → <span class="ui">Propriétés</span> → onglet ou section <b>Permissions</b> → cochez <span class="ui">Autoriser l'exécution du fichier comme un programme</span> (selon le bureau : « Exécutable comme programme », « Est exécutable »).
+            <p>Ou dans un terminal ouvert dans le dossier :</p>
+            <pre><code>chmod +x ForgeAudio-*-linux-x86_64.AppImage</code></pre>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 170" role="img" aria-label="Propriétés du fichier : interrupteur Exécutable comme programme activé">
+              <g font-family="Cantarell, Ubuntu, system-ui, sans-serif" font-size="12">
+                <rect x="6" y="6" width="348" height="158" rx="12" fill="#2b2b2b" stroke="#404040" />
+                <text x="180" y="32" fill="#fff" font-weight="700" text-anchor="middle">Propriétés</text>
+                <text x="24" y="62" fill="#aaa">Nom</text><text x="110" y="62" fill="#fff">ForgeAudio-…-x86_64.AppImage</text>
+                <text x="24" y="88" fill="#aaa">Taille</text><text x="110" y="88" fill="#fff">142 Mo</text>
+                <rect x="18" y="106" width="324" height="44" rx="8" fill="rgba(255,106,26,.12)" stroke="#ff6a1a" stroke-width="2" />
+                <text x="30" y="133" fill="#fff">Exécutable comme programme</text>
+                <rect x="286" y="116" width="44" height="24" rx="12" fill="#3584e4" /><circle cx="318" cy="128" r="9" fill="#fff" />
+              </g>
+            </svg>
+            <figcaption>Schéma (GNOME Fichiers) : le libellé varie selon le bureau</figcaption>
+          </figure>
+        </li>
+        <li class="text">
+          <div>
+            <b>Double-cliquez sur le fichier</b> (ou tapez <code>./ForgeAudio-*-linux-x86_64.AppImage</code>). Rangez-le d'abord où il restera, par exemple dans un dossier <code>~/Applications</code> : c'est ce fichier qui se met à jour.
+            <p><b>Il ne démarre pas ?</b> Les AppImage ont besoin de la bibliothèque <b>FUSE 2</b>, absente par défaut sur Ubuntu 22.04 et plus récent. Installez-la : <code>sudo apt install libfuse2t64</code> (Ubuntu 24.04 et plus) ou <code>sudo apt install libfuse2</code> (Ubuntu 22.04). Sinon, prenez simplement le .deb.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h2 id="mises-a-jour">Mises à jour</h2>
+      <div class="box ok">
+        <p><b>AppImage, .deb et .rpm : automatiques.</b> Forge Audio télécharge la nouvelle version en arrière-plan et l'installe quand vous le quittez, ou tout de suite avec <span class="ui">Redémarrer</span> dans la fenêtre « Mise à jour prête ». Pour un .deb ou un .rpm, le système peut demander votre mot de passe administrateur pendant l'installation.</p>
+      </div>
+      <p>L'archive .tar.gz, aussi publiée sur GitHub pour les utilisateurs avancés, ne se met pas à jour seule : un simple avis s'affiche.</p>
+      <p>Bon à savoir : fermer la fenêtre quitte Forge Audio. La lecture en arrière-plan s'active dans le menu de l'icône Forge Audio, si votre bureau affiche une zone de notification (sous GNOME, il faut une extension pour cela).</p>
+
+      <h2 id="desinstaller">Désinstaller</h2>
+      <ul>
+        <li><b>.deb</b> : <code>sudo apt remove forge-audio-desktop</code></li>
+        <li><b>.rpm</b> : <code>sudo dnf remove forge-audio-desktop</code> (openSUSE : <code>sudo zypper remove forge-audio-desktop</code>)</li>
+        <li><b>AppImage</b> : supprimez le fichier.</li>
+      </ul>
+      <p>Votre compte et vos playlists restent sur le serveur.</p>
+
+      <h2 id="sources" style="font-size:22px">Sources</h2>
+      <p class="meta">Commandes vérifiées le 1er octobre 2026.</p>
+      <ul class="sources-list">
+        <li>AppImage, « <a href="https://docs.appimage.org/introduction/quickstart.html" rel="noopener">Quickstart</a> » (rendre le fichier exécutable, puis le lancer) et « <a href="https://docs.appimage.org/user-guide/troubleshooting/fuse.html" rel="noopener">I get some errors related to something called “FUSE”</a> » (libfuse2).</li>
+        <li>Ubuntu, page de manuel « <a href="https://manpages.ubuntu.com/manpages/noble/man8/apt.8.html" rel="noopener">apt(8)</a> » (installation d'un fichier .deb local avec un chemin).</li>
+        <li>Fedora, « <a href="https://docs.fedoraproject.org/en-US/quick-docs/dnf/" rel="noopener">Using the DNF software package manager</a> ».</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span></a>
+          <p>Lecteur musical sans publicité, sur le web, le téléphone et l'ordinateur. Projet personnel, code ouvert sous licence MIT.</p>
+        </div>
+        <div>
+          <h2>Produit</h2>
+          <ul>
+            <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+            <li><a href="/nouveautes.html">Nouveautés</a></li>
+            <li><a href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a></li>
+            <li><a href="https://github.com/Heiphaistos/Forge-audio-">Code source</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Télécharger</h2>
+          <ul>
+            <li><a href="/windows.html">Windows</a></li>
+            <li><a href="/macos.html">macOS</a></li>
+            <li><a href="/linux.html">Linux</a></li>
+            <li><a href="/android.html">Android</a></li>
+            <li><a href="/ios.html">iPhone et iPad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Aide</h2>
+          <ul>
+            <li><a href="/faq.html">Questions fréquentes</a></li>
+            <li><a href="/aide.html">Aide et contact</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+            <li><a href="/confidentialite.html">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 Forge Audio · Heiphaistos. Aucun cookie, aucune publicité, aucune mesure d'audience.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/nav.js?v=20261001b" defer></script>
+  <script src="/assets/site.js?v=20261001b" defer></script>
+</body>
+</html>

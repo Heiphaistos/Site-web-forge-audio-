@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Installer Forge Audio sur Mac : guide pas à pas</title>
+  <meta name="description" content="Installer Forge Audio sur macOS : choisir puce Apple ou Intel, glisser dans Applications, ouvrir une application non signée (Ouvrir quand même), message « endommagé » et commande xattr expliquée." />
+  <meta name="theme-color" content="#0b0908" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Forge Audio" />
+  <meta property="og:title" content="Installer Forge Audio sur Mac : guide pas à pas" />
+  <meta property="og:description" content="Installer Forge Audio sur macOS : choisir puce Apple ou Intel, glisser dans Applications, ouvrir une application non signée (Ouvrir quand même), message « endommagé » et commande xattr expliquée." />
+  <meta property="og:image" content="https://forgeaudio.heiphaistos.org/assets/desk-search.webp" />
+  <link rel="canonical" href="https://forgeaudio.heiphaistos.org/macos.html" />
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/site.css?v=20261001b" />
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="full bar">
+      <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span><span class="sr-only"> : accueil</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg><span class="label">Menu</span></button>
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+          <li><a href="/telecharger.html" aria-current="true">Télécharger</a></li>
+          <li><a href="/nouveautes.html">Nouveautés</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/aide.html">Aide</a></li>
+        </ul>
+        <a class="btn btn-fire btn-sm" href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="page-head">
+      <div class="wrap narrow">
+        <nav class="crumbs" aria-label="Fil d’Ariane"><ol><li><a href="/">Accueil</a></li><li><a href="/telecharger.html">Télécharger</a></li><li><span aria-current="page">macOS</span></li></ol></nav>
+        <h1>Forge Audio sur <span class="grad">Mac</span></h1>
+        <p class="lead">Pour les Mac à puce Apple (M1 et suivantes) et les Mac Intel. Comptez cinq minutes. Forge Audio n'est pas signé par Apple : la première ouverture demande un passage par les Réglages Système, expliqué ci-dessous.</p>
+        <ul class="platforms" aria-label="Autres plateformes"><li><a href="/windows.html">Windows</a></li><li><a href="/macos.html" aria-current="page">macOS</a></li><li><a href="/linux.html">Linux</a></li><li><a href="/android.html">Android</a></li><li><a href="/ios.html">iPhone / iPad</a></li></ul>
+      </div>
+    </div>
+
+    <div class="wrap narrow prose">
+      <h2 id="puce">1. Quel Mac avez-vous ?</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <b>Menu Pomme (la pomme en haut à gauche de l'écran) → <span class="ui">À propos de ce Mac</span>.</b>
+            <p>Si la fenêtre affiche une ligne <b>Puce</b> (par exemple « Apple M2 »), prenez la version <b>Apple Silicon</b>.</p>
+            <p>Si elle affiche une ligne <b>Processeur</b> avec « Intel », prenez la version <b>Intel</b>.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 210" role="img" aria-label="Fenêtre À propos de ce Mac : ligne Puce Apple M2 entourée">
+              <g font-family="-apple-system, system-ui, sans-serif" font-size="12">
+                <rect x="40" y="6" width="280" height="198" rx="12" fill="#2a2a2c" stroke="#3d3d40" />
+                <circle cx="58" cy="22" r="5" fill="#ff5f57" /><circle cx="74" cy="22" r="5" fill="#febc2e" /><circle cx="90" cy="22" r="5" fill="#28c840" />
+                <rect x="150" y="34" width="60" height="40" rx="4" fill="#4a4a4e" /><rect x="170" y="74" width="20" height="6" fill="#4a4a4e" />
+                <text x="180" y="104" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">MacBook Air</text>
+                <rect x="66" y="118" width="228" height="24" rx="6" fill="rgba(255,106,26,.16)" stroke="#ff6a1a" stroke-width="2" />
+                <text x="80" y="135" fill="#a1a1a6">Puce</text><text x="286" y="135" fill="#fff" text-anchor="end">Apple M2</text>
+                <text x="80" y="162" fill="#a1a1a6">Mémoire</text><text x="286" y="162" fill="#fff" text-anchor="end">8 Go</text>
+                <text x="80" y="186" fill="#a1a1a6">macOS</text><text x="286" y="186" fill="#fff" text-anchor="end">Sequoia 15</text>
+              </g>
+            </svg>
+            <figcaption>Un Mac à puce Apple : « Puce »</figcaption>
+          </figure>
+        </li>
+      </ol>
+
+      <div class="choice">
+        <div class="card">
+          <h3>Apple Silicon</h3>
+          <p>Puce M1, M2, M3, M4 ou plus récente.</p>
+          <div class="links"><a class="btn" data-asset="mac-arm64.dmg" href="https://github.com/Heiphaistos/Forge-audio-/releases/download/v0.12.2/ForgeAudio-0.12.2-mac-arm64.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>Télécharger pour puce Apple <small>125 Mo</small></a></div>
+        </div>
+        <div class="card">
+          <h3>Intel</h3>
+          <p>Mac avec processeur Intel.</p>
+          <div class="links"><a class="btn" data-asset="mac-x64.dmg" href="https://github.com/Heiphaistos/Forge-audio-/releases/download/v0.12.2/ForgeAudio-0.12.2-mac-x64.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>Télécharger pour Intel <small>136 Mo</small></a></div>
+        </div>
+      </div>
+      <p class="meta" style="margin-top:12px">Version de bureau <span data-desk-version>0.12.2</span>, fichiers .dmg hébergés sur GitHub. Sur un navigateur qui sait reconnaître la puce (Chrome, Edge, Brave), le bon bouton est mis en avant.</p>
+
+      <h2 id="installer">2. Installer</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <b>Ouvrez le fichier .dmg téléchargé</b> (dans le dossier <b>Téléchargements</b>), puis <b>glissez l'icône Forge Audio sur le dossier Applications</b> dans la fenêtre qui s'ouvre.
+            <p>Ensuite, éjectez le disque « Forge Audio » (bouton ⏏ dans la barre latérale du Finder). Le fichier .dmg peut être mis à la corbeille.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 180" role="img" aria-label="Fenêtre du dmg : glisser Forge Audio vers le dossier Applications">
+              <g font-family="-apple-system, system-ui, sans-serif" font-size="12">
+                <rect x="6" y="6" width="348" height="168" rx="12" fill="#ececec" />
+                <circle cx="24" cy="22" r="5" fill="#ff5f57" /><circle cx="40" cy="22" r="5" fill="#febc2e" /><circle cx="56" cy="22" r="5" fill="#28c840" />
+                <rect x="58" y="54" width="64" height="64" rx="15" fill="#140f0c" /><path d="M76 106V70h28M76 88h18" stroke="#ff6a1a" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <text x="90" y="140" fill="#222" text-anchor="middle">Forge Audio</text>
+                <path d="M140 86h80" stroke="#ff6a1a" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 9" /><path d="M214 76l12 10-12 10" fill="none" stroke="#ff6a1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M240 60h26l6 7h34v50h-66z" fill="#5aa9f0" /><text x="274" y="96" fill="#fff" font-weight="700" text-anchor="middle" font-size="18">A</text>
+                <text x="273" y="140" fill="#222" text-anchor="middle">Applications</text>
+              </g>
+            </svg>
+            <figcaption>Glisser-déposer vers Applications</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Ouvrez Forge Audio</b> depuis le dossier <b>Applications</b> (ou le Launchpad). macOS refuse une première fois : il ne peut pas vérifier l'application, car elle n'est pas notarisée par Apple.
+            <p>Cliquez sur <span class="ui">Terminé</span>. <b>Surtout pas</b> sur <span class="ui">Placer dans la corbeille</span>.</p>
+            <p>Si le message dit que l'application est <b>endommagée</b>, passez directement à la section <a href="#endommagee">« Forge Audio est endommagé »</a>.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 230" role="img" aria-label="Alerte macOS : Forge Audio n'a pas été ouvert, boutons Terminé et Placer dans la corbeille">
+              <g font-family="-apple-system, system-ui, sans-serif" text-anchor="middle">
+                <rect x="50" y="6" width="260" height="218" rx="16" fill="#2a2a2c" stroke="#3d3d40" />
+                <rect x="156" y="20" width="48" height="48" rx="11" fill="#140f0c" /><path d="M170 58V32h20M170 45h13" stroke="#ff6a1a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <text x="180" y="92" fill="#fff" font-size="13" font-weight="700">« Forge Audio » n'a pas été ouvert</text>
+                <text x="180" y="114" fill="#c7c7cc" font-size="10.5">Apple n'a pas pu vérifier que « Forge Audio »</text>
+                <text x="180" y="128" fill="#c7c7cc" font-size="10.5">ne contient pas de logiciel malveillant…</text>
+                <rect x="68" y="146" width="224" height="28" rx="7" fill="#3a3a3c" /><text x="180" y="165" fill="#fff" font-size="12">Placer dans la corbeille</text>
+                <rect x="64" y="180" width="232" height="36" rx="10" fill="none" stroke="#ff6a1a" stroke-width="2.5" />
+                <rect x="68" y="184" width="224" height="28" rx="7" fill="#0a84ff" /><text x="180" y="203" fill="#fff" font-size="12" font-weight="600">Terminé</text>
+              </g>
+            </svg>
+            <figcaption>Schéma de l'alerte (macOS 15 Sequoia et plus récent)</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Menu Pomme (la pomme en haut à gauche de l'écran) → <span class="ui">Réglages Système</span> → <span class="ui">Confidentialité et sécurité</span>.</b> Faites défiler jusqu'à la partie <b>Sécurité</b> : une ligne parle de Forge Audio. Cliquez sur <span class="ui">Ouvrir quand même</span>.
+            <p>Ce bouton n'apparaît que pendant environ <b>une heure</b> après votre tentative d'ouverture. Vous ne le voyez pas ? Refaites l'étape précédente, puis revenez ici.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 210" role="img" aria-label="Réglages Système, Confidentialité et sécurité : bouton Ouvrir quand même pour Forge Audio">
+              <g font-family="-apple-system, system-ui, sans-serif" font-size="12">
+                <rect x="6" y="6" width="348" height="198" rx="12" fill="#1e1e1e" stroke="#3d3d40" />
+                <rect x="6" y="6" width="96" height="198" rx="12" fill="#262628" /><rect x="90" y="6" width="12" height="198" fill="#262628" />
+                <rect x="14" y="70" width="80" height="22" rx="5" fill="#0a84ff" /><text x="20" y="85" fill="#fff" font-size="9.5">Confidentialité…</text>
+                <rect x="20" y="40" width="68" height="8" rx="4" fill="#3d3d40" /><rect x="20" y="104" width="60" height="8" rx="4" fill="#3d3d40" /><rect x="20" y="124" width="66" height="8" rx="4" fill="#3d3d40" />
+                <text x="116" y="36" fill="#fff" font-size="14" font-weight="700">Confidentialité et sécurité</text>
+                <text x="116" y="66" fill="#a1a1a6" font-size="11" font-weight="600">Sécurité</text>
+                <rect x="112" y="74" width="234" height="112" rx="10" fill="#2a2a2c" />
+                <text x="124" y="98" fill="#fff" font-size="11">L'ouverture de « Forge Audio » a été</text>
+                <text x="124" y="114" fill="#fff" font-size="11">bloquée car il ne provient pas d'un</text>
+                <text x="124" y="130" fill="#fff" font-size="11">développeur identifié.</text>
+                <rect x="216" y="146" width="122" height="32" rx="9" fill="none" stroke="#ff6a1a" stroke-width="2.5" />
+                <rect x="220" y="150" width="114" height="24" rx="6" fill="#4a4a4e" /><text x="277" y="166" fill="#fff" text-anchor="middle">Ouvrir quand même</text>
+              </g>
+            </svg>
+            <figcaption>Schéma : le texte exact dépend de la version de macOS</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Confirmez</b> : une dernière alerte s'affiche avec un bouton <span class="ui">Ouvrir quand même</span> (ou <span class="ui">Ouvrir</span>). Cliquez dessus, puis tapez le <b>mot de passe de votre session Mac</b> (celui qui sert à déverrouiller le Mac) et validez.
+            <p>C'est fini : macOS ne le demandera plus pour Forge Audio. L'application s'ouvre sur la page de connexion : <span class="ui">Se connecter</span>, ou <span class="ui">Créer un compte</span> avec votre code d'invitation.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 170" role="img" aria-label="Demande du mot de passe de session pour ouvrir Forge Audio">
+              <g font-family="-apple-system, system-ui, sans-serif" text-anchor="middle">
+                <rect x="60" y="6" width="240" height="158" rx="16" fill="#2a2a2c" stroke="#3d3d40" />
+                <rect x="160" y="18" width="40" height="40" rx="9" fill="#8e8e93" /><rect x="172" y="34" width="16" height="14" rx="2" fill="#2a2a2c" /><path d="M175 34v-5a5 5 0 0 1 10 0v5" fill="none" stroke="#2a2a2c" stroke-width="2.5" />
+                <text x="180" y="78" fill="#fff" font-size="11.5">Saisissez votre mot de passe</text>
+                <text x="180" y="93" fill="#fff" font-size="11.5">pour autoriser cette modification.</text>
+                <rect x="84" y="104" width="192" height="22" rx="6" fill="#1c1c1e" stroke="#ff6a1a" stroke-width="2" /><text x="180" y="120" fill="#c7c7cc" font-size="12">••••••••</text>
+                <rect x="190" y="134" width="86" height="22" rx="6" fill="#0a84ff" /><text x="233" y="149" fill="#fff" font-size="11.5">OK</text>
+                <rect x="96" y="134" width="86" height="22" rx="6" fill="#4a4a4e" /><text x="139" y="149" fill="#fff" font-size="11.5">Annuler</text>
+              </g>
+            </svg>
+            <figcaption>Le mot de passe de votre session Mac</figcaption>
+          </figure>
+        </li>
+      </ol>
+
+      <div class="box">
+        <p><b>macOS 14 Sonoma ou plus ancien ?</b> C'est plus simple : dans le dossier Applications, faites un <b>clic droit</b> (ou Contrôle + clic) sur Forge Audio, choisissez <span class="ui">Ouvrir</span>, puis <span class="ui">Ouvrir</span> à nouveau dans l'alerte. Depuis macOS 15 Sequoia, ce raccourci ne marche plus : passez par les Réglages Système comme ci-dessus.</p>
+      </div>
+
+      <h2 id="endommagee">« Forge Audio est endommagé et ne peut pas être ouvert »</h2>
+      <p>Ce message fait peur, mais l'application n'est pas abîmée. Le navigateur a posé sur le fichier une étiquette « téléchargé d'Internet » (la <b>quarantaine</b>), et macOS refuse alors d'ouvrir une application qui n'est pas signée par Apple. Une commande retire cette étiquette. Cliquez d'abord sur <span class="ui">Annuler</span> (jamais sur « Placer dans la corbeille »), puis :</p>
+      <ol class="steps">
+        <li class="text">
+          <div>
+            <b>Vérifiez que Forge Audio est bien dans le dossier Applications</b> (étape « Installer » ci-dessus). La commande vise cet emplacement.
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>Ouvrez le Terminal</b> : appuyez sur <kbd>Cmd</kbd> + <kbd>Espace</kbd>, tapez <code>Terminal</code>, puis <kbd>Entrée</kbd>. (Ou Finder → Applications → Utilitaires → Terminal.)
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 120" role="img" aria-label="Recherche Spotlight : Terminal">
+              <g font-family="-apple-system, system-ui, sans-serif" font-size="14">
+                <rect x="20" y="20" width="320" height="44" rx="12" fill="#2a2a2c" stroke="#ff6a1a" stroke-width="2" />
+                <circle cx="44" cy="40" r="7" fill="none" stroke="#a1a1a6" stroke-width="2" /><path d="M49 45l5 5" stroke="#a1a1a6" stroke-width="2" stroke-linecap="round" />
+                <text x="64" y="47" fill="#fff">Terminal</text>
+                <rect x="20" y="72" width="320" height="34" rx="10" fill="#0a84ff" />
+                <rect x="32" y="78" width="22" height="22" rx="5" fill="#111" /><text x="37" y="94" fill="#3ddc84" font-size="11" font-family="ui-monospace, monospace">&gt;_</text>
+                <text x="64" y="94" fill="#fff" font-size="13">Terminal</text>
+              </g>
+            </svg>
+            <figcaption>Cmd + Espace ouvre Spotlight</figcaption>
+          </figure>
+        </li>
+        <li>
+          <div>
+            <b>Copiez cette commande, collez-la dans le Terminal</b> (<kbd>Cmd</kbd> + <kbd>V</kbd>) <b>et appuyez sur <kbd>Entrée</kbd></b> :
+            <pre><code>xattr -cr /Applications/Forge\ Audio.app</code></pre>
+            <p>En détail : <code>xattr</code> gère les étiquettes d'un fichier, <code>-c</code> les retire toutes, <code>-r</code> le fait aussi pour tout ce que contient l'application, et <code>/Applications/Forge\ Audio.app</code> est son emplacement (la barre oblique inversée devant l'espace fait partie du nom, ne la retirez pas).</p>
+            <p>Si rien ne s'affiche, c'est réussi. Le Terminal ne demande pas de mot de passe pour cette commande.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 150" role="img" aria-label="Fenêtre Terminal avec la commande xattr">
+              <g font-family="ui-monospace, Menlo, monospace" font-size="11">
+                <rect x="6" y="6" width="348" height="138" rx="10" fill="#111" stroke="#3d3d40" />
+                <rect x="6" y="6" width="348" height="24" rx="10" fill="#2a2a2c" /><rect x="6" y="20" width="348" height="10" fill="#2a2a2c" />
+                <circle cx="22" cy="18" r="4.5" fill="#ff5f57" /><circle cx="36" cy="18" r="4.5" fill="#febc2e" /><circle cx="50" cy="18" r="4.5" fill="#28c840" />
+                <text x="180" y="22" fill="#a1a1a6" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif">Terminal</text>
+                <text x="18" y="54" fill="#3ddc84">vous@Mac ~ %</text>
+                <text x="18" y="72" fill="#fff">xattr -cr /Applications/Forge\ Audio.app</text>
+                <text x="18" y="96" fill="#3ddc84">vous@Mac ~ %</text><rect x="110" y="86" width="7" height="13" fill="#fff" />
+              </g>
+            </svg>
+            <figcaption>Pas de message en retour = réussi</figcaption>
+          </figure>
+        </li>
+        <li class="text">
+          <div>
+            <b>Rouvrez Forge Audio</b> depuis Applications. Si macOS affiche encore l'alerte « n'a pas été ouvert », suivez les étapes 3 et 4 de l'installation (Réglages Système → Ouvrir quand même).
+          </div>
+        </li>
+      </ol>
+      <div class="box warn">
+        <p>Ne lancez cette commande que pour une application que vous avez téléchargée vous-même depuis une source de confiance, comme ce site. Elle supprime une protection de macOS pour cette application précise, rien d'autre.</p>
+      </div>
+
+      <h2 id="mises-a-jour">Mises à jour</h2>
+      <div class="box">
+        <p><b>Sur Mac : avis seulement.</b> Sans signature Apple, une application ne peut pas se remplacer toute seule. Quand une nouvelle version sort, Forge Audio affiche une fenêtre avec un bouton <span class="ui">Télécharger</span>. Récupérez le nouveau .dmg, glissez Forge Audio dans Applications et choisissez <span class="ui">Remplacer</span>. Il faudra peut-être refaire « Ouvrir quand même » une fois.</p>
+      </div>
+      <p>Vos playlists et votre historique sont sur le serveur : remplacer l'application ne fait rien perdre.</p>
+
+      <h2 id="desinstaller">Désinstaller</h2>
+      <p>Ouvrez le dossier <b>Applications</b> et glissez <b>Forge Audio</b> dans la Corbeille (ou clic droit → <span class="ui">Placer dans la corbeille</span>), puis videz la Corbeille. Votre compte reste sur le serveur.</p>
+
+      <h2 id="sources" style="font-size:22px">Sources</h2>
+      <p class="meta">Étapes vérifiées le 1er octobre 2026. Les fenêtres de macOS changent d'une version à l'autre ; les schémas ci-dessus sont simplifiés.</p>
+      <ul class="sources-list">
+        <li>Apple, « <a href="https://support.apple.com/fr-fr/guide/mac-help/mh40616/mac" rel="noopener">Ouvrir une app d'un développeur non identifié sur Mac</a> » (Réglages Système, Confidentialité et sécurité, Ouvrir quand même, bouton visible environ une heure, mot de passe d'ouverture de session).</li>
+        <li>Apple, « <a href="https://support.apple.com/fr-fr/102445" rel="noopener">Ouvrir des apps en toute sécurité sur votre Mac</a> » (apps non authentifiées, apps signalées comme endommagées).</li>
+        <li>Apple, « <a href="https://support.apple.com/fr-fr/116943" rel="noopener">Ordinateurs Mac avec puce Apple</a> » (À propos de ce Mac : Puce ou Processeur).</li>
+        <li>MacGeneration, « <a href="https://www.macg.co/macos/2024/08/macos-sequoia-complique-louverture-dapps-non-notarisees-145273" rel="noopener">macOS Sequoia complique l'ouverture d'apps non notarisées</a> » (fin du Contrôle + clic, alerte avec Terminé).</li>
+        <li>Page de manuel de <code>xattr</code> (commande <code>man xattr</code> dans le Terminal) : options <code>-c</code> et <code>-r</code>.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span></a>
+          <p>Lecteur musical sans publicité, sur le web, le téléphone et l'ordinateur. Projet personnel, code ouvert sous licence MIT.</p>
+        </div>
+        <div>
+          <h2>Produit</h2>
+          <ul>
+            <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+            <li><a href="/nouveautes.html">Nouveautés</a></li>
+            <li><a href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a></li>
+            <li><a href="https://github.com/Heiphaistos/Forge-audio-">Code source</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Télécharger</h2>
+          <ul>
+            <li><a href="/windows.html">Windows</a></li>
+            <li><a href="/macos.html">macOS</a></li>
+            <li><a href="/linux.html">Linux</a></li>
+            <li><a href="/android.html">Android</a></li>
+            <li><a href="/ios.html">iPhone et iPad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Aide</h2>
+          <ul>
+            <li><a href="/faq.html">Questions fréquentes</a></li>
+            <li><a href="/aide.html">Aide et contact</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+            <li><a href="/confidentialite.html">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 Forge Audio · Heiphaistos. Aucun cookie, aucune publicité, aucune mesure d'audience.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/nav.js?v=20261001b" defer></script>
+  <script src="/assets/site.js?v=20261001b" defer></script>
+</body>
+</html>

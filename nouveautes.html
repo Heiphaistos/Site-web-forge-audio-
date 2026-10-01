@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Nouveautés : Forge Audio</title>
+  <meta name="description" content="Historique des versions de Forge Audio : amis, messages privés, Jam, invitations, mises à jour automatiques, playlists partagées, recommandations, application Android." />
+  <meta name="theme-color" content="#0b0908" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Forge Audio" />
+  <meta property="og:title" content="Nouveautés : Forge Audio" />
+  <meta property="og:description" content="Historique des versions de Forge Audio : amis, messages privés, Jam, invitations, mises à jour automatiques, playlists partagées, recommandations, application Android." />
+  <meta property="og:image" content="https://forgeaudio.heiphaistos.org/assets/desk-search.webp" />
+  <link rel="canonical" href="https://forgeaudio.heiphaistos.org/nouveautes.html" />
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/site.css?v=20261001b" />
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="full bar">
+      <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span><span class="sr-only"> : accueil</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg><span class="label">Menu</span></button>
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+          <li><a href="/telecharger.html">Télécharger</a></li>
+          <li><a href="/nouveautes.html" aria-current="page">Nouveautés</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/aide.html">Aide</a></li>
+        </ul>
+        <a class="btn btn-fire btn-sm" href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="page-head">
+      <div class="wrap narrow">
+        <h1><span class="grad">Nouveautés</span></h1>
+        <p class="lead">Ce qui a changé, version par version, de la plus récente à la plus ancienne. Le lecteur web est toujours à la dernière version ; les applications Android et de bureau affichent l'interface du serveur et profitent donc aussi de ces nouveautés sans réinstallation.</p>
+        <nav class="toc" aria-label="Sections"><b>Sections</b><a href="#lecteur">Lecteur et bureau</a><a href="#android">Application Android</a><a href="https://github.com/Heiphaistos/Forge-audio-/releases">Toutes les publications sur GitHub</a></nav>
+      </div>
+    </div>
+
+    <div class="wrap narrow">
+      <h2 id="lecteur" style="margin-top:48px">Lecteur et applications de bureau</h2>
+
+      <article class="release"><div><h3>0.16.1</h3><time datetime="2026-10-01">1er octobre 2026</time></div>
+        <ul>
+          <li>Les messages privés et la discussion du Jam arrivent de nouveau en direct après une coupure de connexion (avant : il fallait recharger la page).</li>
+          <li>La fenêtre du Jam défile sur les petits écrans : « Quitter » reste toujours accessible, même clavier ouvert.</li>
+          <li>Un message reçu dans le Jam, fenêtre fermée, s'annonce par une notification et un badge.</li>
+          <li>Le dernier message d'une conversation n'est plus caché sous la zone de saisie.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.16.0</h3><time datetime="2026-10-01">1er octobre 2026</time></div>
+        <ul>
+          <li><b>Amis</b> : demandes par identifiant, accepter, refuser, retirer, bloquer.</li>
+          <li><b>Messages privés</b> entre amis, avec « vu ».</li>
+          <li><b>Discussion du Jam</b>.</li>
+          <li>Activité, Blend, invitations au Jam et nouvelles playlists partagées sont désormais réservés aux amis.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.15.0</h3><time datetime="2026-10-01">1er octobre 2026</time></div>
+        <ul>
+          <li><b>Création de compte sur invitation</b> : onglet « Créer un compte » avec un code à usage unique, générateur de mot de passe.</li>
+          <li>Les administrateurs créent et révoquent les codes dans Paramètres → Administration.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.14.0</h3><time datetime="2026-10-01">1er octobre 2026</time></div>
+        <ul><li>Le lecteur web chiffre le mot de passe avant de l'envoyer : il n'apparaît plus en clair, même dans les outils du navigateur.</li></ul>
+      </article>
+      <article class="release"><div><h3>0.13.0</h3><time datetime="2026-10-01">1er octobre 2026</time></div>
+        <ul><li>Pages légales du lecteur (mentions, confidentialité, conditions d'utilisation). La police est servie par le serveur : plus aucun appel à Google Fonts.</li></ul>
+      </article>
+      <article class="release"><div><h3>0.12</h3><time datetime="2026-09-30">30 septembre 2026</time><div class="tags"><span>Bureau publié : 0.12.0, 0.12.2</span></div></div>
+        <ul>
+          <li><b>Mises à jour automatiques</b> des applications de bureau (installeur Windows, AppImage, .deb, .rpm) ; simple avis pour la version portable et macOS.</li>
+          <li>Les applications de bureau se connectent par défaut au serveur partagé ; le serveur se change depuis la page de connexion.</li>
+          <li>Fermer la fenêtre quitte l'application ; la lecture en arrière-plan devient une option à cocher (0.12.2).</li>
+          <li>Version de l'application mobile affichée dans les Paramètres (0.12.1).</li>
+          <li>Quand YouTube refuse le serveur, lecture de secours sur SoundCloud ou Dailymotion (0.12.3), puis lecture YouTube rétablie (0.12.4).</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.11.0</h3><time datetime="2026-09-30">30 septembre 2026</time><div class="tags"><span>Bureau publié</span></div></div>
+        <ul>
+          <li><b>Pages Genre</b> avec playlists officielles et mix de la communauté (une trentaine de genres).</li>
+          <li>Volume plus naturel (courbe perceptive).</li>
+          <li>Bouton Précédent dans le mini-lecteur sur téléphone.</li>
+          <li>« Ce titre est dans » : les playlists qui contiennent déjà le titre en cours.</li>
+          <li>Paquet .rpm pour Fedora et openSUSE.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.10</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul>
+          <li><b>Activité des amis</b>, <b>Blend</b> (playlist qui mélange deux goûts) et <b>statistiques d'écoute</b>.</li>
+          <li>Liens de partage qui ouvrent un titre directement dans le lecteur.</li>
+          <li>Activité, statistiques et Blend accessibles aussi depuis le bot Discord (0.10.1).</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.9</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul>
+          <li><b>Fondu enchaîné</b> (jusqu'à 12 s) et enchaînement sans blanc.</li>
+          <li><b>Volume harmonisé</b> entre les titres.</li>
+          <li>Qualité du flux au choix et <b>économie de données</b> sur réseau mobile.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.8.0</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul>
+          <li><b>Pages Artiste et Album</b> : titres phares, discographie, artistes similaires, biographie.</li>
+          <li>Recherche par onglets : Titres, Artistes, Albums, Playlists.</li>
+          <li><b>Recommandations</b> : mix par artiste, Découvertes de la semaine, Radar des sorties.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.7.0</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul>
+          <li>Sélection multiple, fusion de playlists, playlist créée depuis les titres likés.</li>
+          <li>Dossiers, playlists épinglées, image de couverture.</li>
+          <li>Masquer un titre ou un artiste de la radio et des recommandations.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.6.0</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul>
+          <li><b>Playlists partagées</b> entre comptes.</li>
+          <li><b>Jam</b> : écouter ensemble, en même temps.</li>
+          <li>Liaison avec Discord (HeiphaisBot) : mêmes titres likés.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.5.0</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul>
+          <li>« Titres likés » en tête du menu Ajouter, ajout de plusieurs titres d'un coup, cœur toujours visible, touche J.</li>
+          <li>Suivre des artistes. Un like retiré ne revient plus depuis un autre appareil.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.4</h3><time datetime="2026-09-29">29 et 30 septembre 2026</time><div class="tags"><span>Bureau publié : 0.4.0</span></div></div>
+        <ul>
+          <li>Vidéo en plein écran, en lecteur réduit ou en image dans l'image.</li>
+          <li>Lecture en arrière-plan sur ordinateur ; liens vers les applications mobiles.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.3</h3><time datetime="2026-09-29">29 septembre 2026</time><div class="tags"><span>Bureau publié : 0.3.3</span></div></div>
+        <ul>
+          <li><b>Comptes</b> et bibliothèque sauvegardée sur le serveur pour chaque utilisateur.</li>
+          <li>Protection renforcée contre les essais de mots de passe en série.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.2</h3><time datetime="2026-09-29">29 septembre 2026</time><div class="tags"><span>Bureau publié : 0.2.0 à 0.2.2</span></div></div>
+        <ul>
+          <li>Lecture des liens <b>Spotify, Deezer et Apple Music</b>.</li>
+          <li>Fin des craquements sur certains titres, titres SoundCloud protégés lus via leur équivalent, plus de souffle dans le casque pendant les pauses.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.1</h3><time datetime="2026-09-29">29 septembre 2026</time><div class="tags"><span>Bureau publié : 0.1.3</span></div></div>
+        <ul><li>Première version : recherche multi-sources, lecteur, paroles, vidéo, égaliseur, playlists, téléchargements, applications Windows, macOS et Linux.</li></ul>
+      </article>
+
+      <h2 id="android" style="margin-top:72px">Application Android</h2>
+      <article class="release"><div><h3>0.5.1</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul><li>La version installée s'affiche dans Paramètres → Application mobile.</li></ul>
+      </article>
+      <article class="release"><div><h3>0.5.0</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul>
+          <li><b>Mises à jour intégrées</b> : téléchargées et vérifiées par l'application, installées sans confirmation sur Android 14 et plus après la première fois.</li>
+          <li>Au premier lancement, ouverture directe sur la page de connexion.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.4.4</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul><li>L'application ne passe plus sous l'heure et les boutons de navigation ; bouton j'aime dans la notification.</li></ul>
+      </article>
+      <article class="release"><div><h3>0.4.3</h3><time datetime="2026-09-30">30 septembre 2026</time></div>
+        <ul>
+          <li>Vidéo en plein écran, téléchargements MP3 et MP4, « Partager → Forge Audio ».</li>
+          <li>Barre de progression dans la notification, pause quand le casque est débranché, Retour ferme les panneaux, page hors ligne.</li>
+        </ul>
+      </article>
+      <article class="release"><div><h3>0.4.1 et 0.4.2</h3><time datetime="2026-09-29">29 septembre 2026</time></div>
+        <ul>
+          <li>Première version publique : musique écran éteint, notification avec commandes, touches du casque.</li>
+          <li>0.4.2 : signature définitive. Les versions 0.4.1 et antérieures doivent être désinstallées une fois.</li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span></a>
+          <p>Lecteur musical sans publicité, sur le web, le téléphone et l'ordinateur. Projet personnel, code ouvert sous licence MIT.</p>
+        </div>
+        <div>
+          <h2>Produit</h2>
+          <ul>
+            <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+            <li><a href="/nouveautes.html">Nouveautés</a></li>
+            <li><a href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a></li>
+            <li><a href="https://github.com/Heiphaistos/Forge-audio-">Code source</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Télécharger</h2>
+          <ul>
+            <li><a href="/windows.html">Windows</a></li>
+            <li><a href="/macos.html">macOS</a></li>
+            <li><a href="/linux.html">Linux</a></li>
+            <li><a href="/android.html">Android</a></li>
+            <li><a href="/ios.html">iPhone et iPad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Aide</h2>
+          <ul>
+            <li><a href="/faq.html">Questions fréquentes</a></li>
+            <li><a href="/aide.html">Aide et contact</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+            <li><a href="/confidentialite.html">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 Forge Audio · Heiphaistos. Aucun cookie, aucune publicité, aucune mesure d'audience.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/nav.js?v=20261001b" defer></script>
+  <script src="/assets/site.js?v=20261001b" defer></script>
+</body>
+</html>

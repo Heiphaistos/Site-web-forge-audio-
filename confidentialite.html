@@ -3,54 +3,122 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Confidentialité — Forge Audio</title>
+  <title>Confidentialité : Forge Audio</title>
   <meta name="description" content="Données traitées par le site forgeaudio.heiphaistos.org et droits RGPD." />
   <meta name="theme-color" content="#0b0908" />
   <meta name="color-scheme" content="dark" />
-  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/legal.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Forge Audio" />
+  <meta property="og:title" content="Confidentialité : Forge Audio" />
+  <meta property="og:description" content="Données traitées par le site forgeaudio.heiphaistos.org et droits RGPD." />
+  <meta property="og:image" content="https://forgeaudio.heiphaistos.org/assets/desk-search.webp" />
+  <link rel="canonical" href="https://forgeaudio.heiphaistos.org/confidentialite.html" />
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/site.css?v=20261001b" />
 </head>
 <body>
-  <header>
-    <div class="wrap bar">
-      <a class="brand" href="/"><img src="assets/icon.svg" alt="" /> <span>Forge <span class="grad">Audio</span></span></a>
-      <a class="back" href="/">← Accueil</a>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="full bar">
+      <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span><span class="sr-only"> : accueil</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><svg class="burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg><span class="label">Menu</span></button>
+      <nav id="site-nav" class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+          <li><a href="/telecharger.html">Télécharger</a></li>
+          <li><a href="/nouveautes.html">Nouveautés</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/aide.html">Aide</a></li>
+        </ul>
+        <a class="btn btn-fire btn-sm" href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a>
+      </nav>
     </div>
   </header>
-  <main class="wrap">
-    <h1>Politique de confidentialité</h1>
-    <p class="updated">Dernière mise à jour : 1er octobre 2026</p>
-    <p>En bref : <strong>forgeaudio.heiphaistos.org</strong> est un site de présentation statique. Il n'y a ni compte, ni formulaire, ni publicité, ni mesure d'audience, ni cookie. Cette politique ne couvre que ce site : le lecteur <strong>connect.forgeaudio.heiphaistos.org</strong>, qui demande un compte, et les applications sont des services distincts.</p>
 
-    <h2>Responsable de traitement</h2>
-    <p>L'éditeur du site (voir les <a href="mentions-legales.html">mentions légales</a>), joignable à <a href="mailto:contact.forgeinformatique@heiphaistos.org">contact.forgeinformatique@heiphaistos.org</a>.</p>
+  <main id="contenu">
+    <div class="page-head">
+      <div class="wrap narrow">
+        <nav class="crumbs" aria-label="Fil d’Ariane"><ol><li><a href="/">Accueil</a></li><li><span aria-current="page">Confidentialité</span></li></ol></nav>
+        <h1>Politique de confidentialité</h1>
+        <p class="meta">Dernière mise à jour : 1er octobre 2026</p>
+      </div>
+    </div>
 
-    <h2>Journaux techniques du serveur</h2>
-    <p>Comme tout serveur web, celui qui héberge ce site enregistre pour chaque requête l'adresse IP, la date, la page demandée et le navigateur utilisé.</p>
-    <p>Finalité : sécurité, prévention des abus et diagnostic technique. Base légale : intérêt légitime (article 6.1.f du RGPD). Conservation : 12 mois maximum.</p>
+    <div class="wrap narrow prose legal">
+      <p>En bref : <strong>forgeaudio.heiphaistos.org</strong> est un site d'information statique (présentation, guides d'installation, questions fréquentes). Il n'y a ni compte, ni formulaire, ni publicité, ni mesure d'audience, ni cookie. Cette politique ne couvre que ce site : le lecteur <strong>connect.forgeaudio.heiphaistos.org</strong>, qui demande un compte, et les applications sont des services distincts.</p>
 
-    <h2>Liens de téléchargement (GitHub)</h2>
-    <p>Pour que les boutons de téléchargement pointent vers la dernière version, la page d'accueil interroge directement depuis votre navigateur l'API publique de <strong>GitHub, Inc.</strong> (États-Unis). GitHub reçoit donc votre adresse IP et les informations techniques habituelles d'une requête web. Aucune donnée vous concernant n'est transmise par l'éditeur. Les fichiers des applications de bureau et iPhone sont téléchargés depuis GitHub ; l'application Android est servie par ce site.</p>
-    <p>GitHub adhère au cadre de protection des données UE–États-Unis (Data Privacy Framework). Voir la <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">déclaration de confidentialité de GitHub</a>.</p>
+      <h2>Responsable de traitement</h2>
+      <p>L'éditeur du site (voir les <a href="/mentions-legales.html">mentions légales</a>), joignable à <a href="mailto:contact.forgeinformatique@heiphaistos.org">contact.forgeinformatique@heiphaistos.org</a>.</p>
 
-    <h2>Cookies, stockage local et polices</h2>
-    <p>Ce site ne dépose <strong>aucun cookie</strong> et n'utilise pas le stockage local de votre navigateur. Il ne charge aucune police, aucun script ni aucune image depuis un service tiers.</p>
+      <h2>Journaux techniques du serveur</h2>
+      <p>Comme tout serveur web, celui qui héberge ce site enregistre pour chaque requête l'adresse IP, la date, la page demandée et le navigateur utilisé.</p>
+      <p>Finalité : sécurité, prévention des abus et diagnostic technique. Base légale : intérêt légitime (article 6.1.f du RGPD). Conservation : 12 mois maximum.</p>
 
-    <h2>Contact par e-mail</h2>
-    <p>Si vous écrivez à l'adresse de contact, votre message et votre adresse e-mail sont conservés le temps de traiter la demande, puis 3 ans au maximum. Base légale : intérêt légitime à répondre aux demandes.</p>
+      <h2>Liens de téléchargement (GitHub)</h2>
+      <p>Pour que les boutons de téléchargement pointent vers la dernière version, les pages d'installation pour ordinateur (Windows, macOS, Linux) interrogent directement depuis votre navigateur l'API publique de <strong>GitHub, Inc.</strong> (États-Unis). GitHub reçoit donc votre adresse IP et les informations techniques habituelles d'une requête web. Les autres pages du site ne contactent aucun service tiers. Aucune donnée vous concernant n'est transmise par l'éditeur.</p>
+      <p>Les fichiers des applications de bureau sont téléchargés depuis GitHub. Les fichiers des applications Android (<code>ForgeAudio-android.apk</code>) et iPhone (<code>ForgeAudio-ios.ipa</code>) sont servis directement par ce site, comme le petit fichier de version lu par l'application Android pour ses mises à jour : ces téléchargements apparaissent seulement dans les journaux du serveur décrits ci-dessus.</p>
+      <p>GitHub adhère au cadre de protection des données UE–États-Unis (Data Privacy Framework). Voir la <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">déclaration de confidentialité de GitHub</a>.</p>
 
-    <h2>Destinataires</h2>
-    <p>Les données sont traitées sur un serveur hébergé par IONOS SE dans l'Union européenne. Elles ne sont ni vendues, ni cédées, ni utilisées pour du profilage ou de la publicité.</p>
+      <h2>Cookies, stockage local et polices</h2>
+      <p>Ce site ne dépose <strong>aucun cookie</strong> et n'utilise pas le stockage local de votre navigateur. Le texte du site utilise la police Inter (licence SIL Open Font License), servie par ce site lui-même : aucune police, aucun script ni aucune image n'est chargé depuis un service tiers. Les liens vers d'autres sites (Apple, Microsoft, Google, Sideloadly, AltStore, GitHub…) ne sont suivis que si vous cliquez dessus.</p>
 
-    <h2>Vos droits</h2>
-    <p>Vous disposez des droits d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité (articles 15 à 22 du RGPD). Pour les exercer : <a href="mailto:contact.forgeinformatique@heiphaistos.org">contact.forgeinformatique@heiphaistos.org</a> — réponse sous un mois.</p>
-    <p>En cas de désaccord, vous pouvez saisir la CNIL : <a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>.</p>
+      <h2>Contact par e-mail</h2>
+      <p>Si vous écrivez à l'adresse de contact, votre message et votre adresse e-mail sont conservés le temps de traiter la demande, puis 3 ans au maximum. Base légale : intérêt légitime à répondre aux demandes.</p>
+
+      <h2>Destinataires</h2>
+      <p>Les données sont traitées sur un serveur hébergé par IONOS SE dans l'Union européenne. Elles ne sont ni vendues, ni cédées, ni utilisées pour du profilage ou de la publicité.</p>
+
+      <h2>Vos droits</h2>
+      <p>Vous disposez des droits d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité (articles 15 à 22 du RGPD). Pour les exercer : <a href="mailto:contact.forgeinformatique@heiphaistos.org">contact.forgeinformatique@heiphaistos.org</a> — réponse sous un mois.</p>
+      <p>En cas de désaccord, vous pouvez saisir la CNIL : <a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>.</p>
+  
+    </div>
   </main>
-  <footer>
+
+  <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 Forge Audio · Heiphaistos</span>
-      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="mailto:contact.forgeinformatique@heiphaistos.org">Contact</a></span>
+      <div class="foot">
+        <div>
+          <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="30" height="30" /> <span>Forge <span class="grad">Audio</span></span></a>
+          <p>Lecteur musical sans publicité, sur le web, le téléphone et l'ordinateur. Projet personnel, code ouvert sous licence MIT.</p>
+        </div>
+        <div>
+          <h2>Produit</h2>
+          <ul>
+            <li><a href="/fonctionnalites.html">Fonctionnalités</a></li>
+            <li><a href="/nouveautes.html">Nouveautés</a></li>
+            <li><a href="https://connect.forgeaudio.heiphaistos.org/">Ouvrir le lecteur</a></li>
+            <li><a href="https://github.com/Heiphaistos/Forge-audio-">Code source</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Télécharger</h2>
+          <ul>
+            <li><a href="/windows.html">Windows</a></li>
+            <li><a href="/macos.html">macOS</a></li>
+            <li><a href="/linux.html">Linux</a></li>
+            <li><a href="/android.html">Android</a></li>
+            <li><a href="/ios.html">iPhone et iPad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Aide</h2>
+          <ul>
+            <li><a href="/faq.html">Questions fréquentes</a></li>
+            <li><a href="/aide.html">Aide et contact</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+            <li><a href="/confidentialite.html">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 Forge Audio · Heiphaistos. Aucun cookie, aucune publicité, aucune mesure d'audience.</p>
     </div>
   </footer>
+
+  <script src="/assets/nav.js?v=20261001b" defer></script>
+  <script src="/assets/site.js?v=20261001b" defer></script>
 </body>
 </html>
