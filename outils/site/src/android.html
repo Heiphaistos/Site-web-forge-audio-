@@ -1,0 +1,222 @@
+<!--meta
+title: Installer Forge Audio sur Android : guide pas à pas
+description: Installer l'application Android Forge Audio (APK) : avertissement de Chrome, autoriser l'installation depuis le navigateur, Google Play Protect, premier lancement, notifications et mises à jour automatiques.
+nav: telecharger
+exact: no
+crumbs: Télécharger=/telecharger.html|Android
+-->
+    <div class="page-head">
+      <div class="wrap narrow">
+        {{crumbs}}
+        <h1>Forge Audio sur <span class="grad">Android</span></h1>
+        <p class="lead">Android 7 ou plus récent. L'application n'est pas sur le Play Store : on la télécharge ici, en un fichier de 3 Mo, puis Android pose deux ou trois questions de sécurité. Comptez trois minutes.</p>
+        {{platforms}}
+      </div>
+    </div>
+
+    <div class="wrap narrow prose">
+      <div class="links">
+        <a class="btn btn-fire" href="/ForgeAudio-android.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>Télécharger l'application (APK) <small>3 Mo</small></a>
+      </div>
+      <p class="meta" style="margin-top:10px">Le fichier est servi directement par ce site. Ouvrez cette page <b>sur le téléphone</b> pour le télécharger.</p>
+
+      <h2 id="installer">Installer, étape par étape</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <b>Touchez le bouton de téléchargement.</b> Si Chrome affiche « Ce fichier peut être dangereux », touchez <span class="ui">Télécharger quand même</span>.
+            <p>Sans cette confirmation, le téléchargement reste bloqué à 100 %. Chrome affiche cet avertissement pour toute application qui ne vient pas du Play Store, pas seulement pour Forge Audio. Si le message a disparu, ouvrez le menu de Chrome (<span class="ui">⋮</span>) → <span class="ui">Téléchargements</span>.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 200" role="img" aria-label="Avertissement de Chrome : Ce fichier peut être dangereux, boutons Annuler et Télécharger quand même">
+              <g font-family="Roboto, system-ui, sans-serif">
+                <rect x="30" y="6" width="300" height="188" rx="24" fill="#2d2f31" />
+                <text x="52" y="46" fill="#e8eaed" font-size="16">Ce fichier peut être dangereux</text>
+                <text x="52" y="76" fill="#bdc1c6" font-size="12">Voulez-vous quand même conserver</text>
+                <text x="52" y="94" fill="#bdc1c6" font-size="12">ForgeAudio-android.apk ?</text>
+                <text x="146" y="160" fill="#8ab4f8" font-size="13" text-anchor="middle">Annuler</text>
+                <rect x="192" y="138" width="124" height="36" rx="18" fill="none" stroke="#ff6a1a" stroke-width="2.5" />
+                <text x="254" y="160" fill="#8ab4f8" font-size="12.5" font-weight="600" text-anchor="middle">Télécharger quand même</text>
+              </g>
+            </svg>
+            <figcaption>Schéma de l'avertissement de Chrome (texte selon la version)</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Ouvrez le fichier téléchargé</b> : touchez <span class="ui">Ouvrir</span> dans la notification « Téléchargement terminé », ou ouvrez-le depuis les Téléchargements de Chrome ou l'application <b>Fichiers</b>.
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 120" role="img" aria-label="Notification de téléchargement terminé avec le bouton Ouvrir">
+              <g font-family="Roboto, system-ui, sans-serif" font-size="12">
+                <rect x="10" y="14" width="340" height="92" rx="22" fill="#2d2f31" />
+                <circle cx="40" cy="44" r="12" fill="#8ab4f8" /><path d="M40 37v12m0 0 4-4m-4 4-4-4" stroke="#202124" stroke-width="2" fill="none" stroke-linecap="round" />
+                <text x="62" y="40" fill="#e8eaed" font-size="13">ForgeAudio-android.apk</text>
+                <text x="62" y="58" fill="#bdc1c6">Téléchargement terminé</text>
+                <rect x="60" y="70" width="70" height="28" rx="14" fill="none" stroke="#ff6a1a" stroke-width="2.5" />
+                <text x="95" y="89" fill="#8ab4f8" font-weight="600" text-anchor="middle">Ouvrir</text>
+              </g>
+            </svg>
+            <figcaption>La notification de fin de téléchargement</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Autorisez votre navigateur à installer des applications.</b> La première fois, Android indique qu'il n'est pas autorisé à installer des applications inconnues venant de cette source. Touchez <span class="ui">Paramètres</span>, activez <span class="ui">Autoriser cette source</span> (ou « Autoriser l'installation d'applications »), puis revenez en arrière.
+            <p><b>Android 7</b> : le réglage est global, dans <span class="ui">Paramètres</span> → <span class="ui">Sécurité</span> → <span class="ui">Sources inconnues</span>.</p>
+            <p><b>Samsung</b> (One UI 6 et plus) : si l'installation est refusée sans proposer de réglage, le <b>Bloqueur automatique</b> est activé : <span class="ui">Paramètres</span> → <span class="ui">Sécurité et confidentialité</span> → <span class="ui">Bloqueur automatique</span>, désactivez-le le temps de l'installation.</p>
+            <p><b>Xiaomi, Redmi, POCO</b> : HyperOS peut ajouter son propre écran d'avertissement avec un compte à rebours : attendez la fin puis confirmez.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 190" role="img" aria-label="Réglage Installer des applis inconnues : interrupteur Autoriser cette source activé pour Chrome">
+              <g font-family="Roboto, system-ui, sans-serif" font-size="13">
+                <rect x="30" y="6" width="300" height="178" rx="22" fill="#1f1f1f" />
+                <text x="50" y="40" fill="#e8eaed" font-size="16">Installer des applis inconnues</text>
+                <circle cx="62" cy="84" r="14" fill="#fff" /><circle cx="62" cy="84" r="9" fill="#4285f4" /><path d="M62 70a14 14 0 0 1 12 7h-12z" fill="#ea4335" /><path d="M50 77a14 14 0 0 0 5 19l6-11z" fill="#34a853" />
+                <text x="86" y="89" fill="#e8eaed">Chrome</text>
+                <rect x="42" y="114" width="276" height="50" rx="14" fill="rgba(255,106,26,.12)" stroke="#ff6a1a" stroke-width="2" />
+                <text x="58" y="144" fill="#e8eaed">Autoriser cette source</text>
+                <rect x="262" y="128" width="42" height="22" rx="11" fill="#8ab4f8" /><circle cx="293" cy="139" r="8" fill="#202124" />
+              </g>
+            </svg>
+            <figcaption>Le réglage, propre à chaque application (Android 8 et plus)</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Touchez <span class="ui">Installer</span></b> dans la fenêtre « Voulez-vous installer cette application ? ».
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 150" role="img" aria-label="Fenêtre d'installation Android : Forge Audio, boutons Annuler et Installer">
+              <g font-family="Roboto, system-ui, sans-serif" font-size="13">
+                <rect x="30" y="6" width="300" height="138" rx="22" fill="#2d2f31" />
+                <rect x="50" y="24" width="36" height="36" rx="9" fill="#140f0c" /><path d="M60 52V32h16M60 42h10" stroke="#ff6a1a" stroke-width="4" fill="none" stroke-linecap="round" />
+                <text x="98" y="47" fill="#e8eaed" font-size="15">Forge Audio</text>
+                <text x="50" y="86" fill="#bdc1c6" font-size="12">Voulez-vous installer cette application ?</text>
+                <text x="190" y="124" fill="#8ab4f8" text-anchor="middle">Annuler</text>
+                <rect x="236" y="104" width="78" height="30" rx="15" fill="none" stroke="#ff6a1a" stroke-width="2.5" />
+                <text x="275" y="124" fill="#8ab4f8" font-weight="600" text-anchor="middle">Installer</text>
+              </g>
+            </svg>
+            <figcaption>La fenêtre d'installation d'Android</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Si Google Play Protect intervient.</b> Pour une application qu'il ne connaît pas encore, Play Protect affiche « Analyse d'appli recommandée » : touchez <span class="ui">Analyser l'appli</span>. Google examine l'application quelques secondes, puis l'installation continue.
+            <p>Si votre téléphone affiche plutôt un message de <b>blocage</b> avec un lien <span class="ui">Plus de détails</span>, touchez-le, puis <span class="ui">Installer quand même</span>. Une proposition « Envoyer l'appli pour vérification de sécurité » est facultative : vous pouvez accepter ou refuser, cela ne change rien à l'installation.</p>
+            <p>Play Protect se méfie par défaut de toute application installée hors du Play Store. Forge Audio ne demande aucun accès sensible (ni SMS, ni contacts, ni accessibilité).</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 210" role="img" aria-label="Fenêtre Google Play Protect : Analyse d'appli recommandée, boutons Analyser l'appli et Ne pas installer l'appli">
+              <g font-family="Roboto, system-ui, sans-serif">
+                <rect x="30" y="6" width="300" height="198" rx="24" fill="#2d2f31" />
+                <path d="M180 22l16 6v12c0 10-7 17-16 20-9-3-16-10-16-20V28z" fill="#34a853" /><path d="M173 40l5 5 9-9" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <text x="180" y="82" fill="#e8eaed" font-size="15" text-anchor="middle">Analyse d'appli recommandée</text>
+                <text x="180" y="104" fill="#bdc1c6" font-size="11" text-anchor="middle">Cette appli est inconnue de Play Protect…</text>
+                <rect x="58" y="122" width="244" height="36" rx="18" fill="none" stroke="#ff6a1a" stroke-width="2.5" />
+                <rect x="62" y="126" width="236" height="28" rx="14" fill="#8ab4f8" /><text x="180" y="145" fill="#202124" font-size="12.5" font-weight="600" text-anchor="middle">Analyser l'appli</text>
+                <text x="180" y="184" fill="#8ab4f8" font-size="12.5" text-anchor="middle">Ne pas installer l'appli</text>
+              </g>
+            </svg>
+            <figcaption>Le message officiel de Play Protect pour une appli inconnue</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Ouvrez Forge Audio et acceptez les notifications.</b> Touchez <span class="ui">Autoriser</span> quand Android le demande : c'est la notification qui garde la musique en marche écran éteint, avec la pochette et les boutons précédent, lecture, suivant et j'aime.
+            <p>L'application s'ouvre sur la page de connexion du serveur <code>connect.forgeaudio.heiphaistos.org</code>, déjà réglé : en bas, « Serveur : connect.forgeaudio… · Changer ». N'y touchez pas, sauf si on vous a donné une autre adresse.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 170" role="img" aria-label="Demande d'Android : autoriser Forge Audio à vous envoyer des notifications">
+              <g font-family="Roboto, system-ui, sans-serif" text-anchor="middle">
+                <rect x="40" y="6" width="280" height="158" rx="24" fill="#2d2f31" />
+                <path d="M180 24a10 10 0 0 0-10 10v8l-4 6h28l-4-6v-8a10 10 0 0 0-10-10zM176 52a4 4 0 0 0 8 0" fill="none" stroke="#8ab4f8" stroke-width="2" />
+                <text x="180" y="80" fill="#e8eaed" font-size="12.5">Autoriser Forge Audio à vous</text>
+                <text x="180" y="97" fill="#e8eaed" font-size="12.5">envoyer des notifications ?</text>
+                <rect x="60" y="108" width="240" height="26" rx="13" fill="#8ab4f8" stroke="#ff6a1a" stroke-width="2.5" /><text x="180" y="126" fill="#202124" font-size="12.5" font-weight="600">Autoriser</text>
+                <text x="180" y="152" fill="#8ab4f8" font-size="12.5">Ne pas autoriser</text>
+              </g>
+            </svg>
+            <figcaption>Android 13 et plus récent</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <div>
+            <b>Connectez-vous, ou créez votre compte.</b> Avec un code d'invitation (de la forme <code>FORGE-XXXX-XXXX-XXXX</code>) : onglet <span class="ui">Créer un compte</span>, collez le code, choisissez un identifiant, puis un mot de passe (le bouton <span class="ui">Générer un mot de passe</span> en crée un très solide ; laissez votre gestionnaire de mots de passe l'enregistrer). Déjà un compte : onglet <span class="ui">Se connecter</span>.
+          </div>
+          <figure>
+            <svg viewBox="0 0 300 240" role="img" aria-label="Formulaire Créer un compte : code d'invitation, identifiant, mot de passe">
+              <g font-family="system-ui, sans-serif" font-size="12">
+                <rect x="10" y="6" width="280" height="228" rx="16" fill="#17120f" stroke="rgba(255,236,220,.12)" />
+                <rect x="26" y="20" width="248" height="32" rx="16" fill="#0b0908" />
+                <text x="88" y="41" fill="#a89d94" text-anchor="middle">Se connecter</text>
+                <rect x="152" y="23" width="119" height="26" rx="13" fill="#ff6a1a" />
+                <text x="211" y="41" fill="#160a03" font-weight="700" text-anchor="middle">Créer un compte</text>
+                <text x="28" y="74" fill="#f6f1ec">Code d'invitation</text>
+                <rect x="26" y="80" width="248" height="28" rx="8" fill="#0b0908" stroke="#ff6a1a" stroke-width="2" />
+                <text x="36" y="99" fill="#a89d94" font-family="ui-monospace, monospace">FORGE-XXXX-XXXX-XXXX</text>
+                <text x="28" y="126" fill="#f6f1ec">Identifiant</text>
+                <rect x="26" y="132" width="248" height="28" rx="8" fill="#0b0908" stroke="rgba(255,236,220,.15)" />
+                <text x="28" y="178" fill="#f6f1ec">Mot de passe</text>
+                <rect x="26" y="184" width="248" height="28" rx="8" fill="#0b0908" stroke="rgba(255,236,220,.15)" />
+                <text x="36" y="203" fill="#a89d94">••••••••••••••••</text>
+              </g>
+            </svg>
+            <figcaption>L'onglet « Créer un compte »</figcaption>
+          </figure>
+        </li>
+      </ol>
+
+      <h2 id="mises-a-jour">Mises à jour automatiques</h2>
+      <p>L'application vérifie toute seule les nouvelles versions, au lancement puis toutes les six heures. Elle télécharge la mise à jour en arrière-plan, puis <b>vérifie son empreinte</b> (taille, SHA-256, nom du paquet et signature) avant de proposer quoi que ce soit : un fichier modifié en route est refusé.</p>
+      <ol class="steps">
+        <li>
+          <div>
+            <b>Une fenêtre « Mise à jour prête » s'affiche</b> : touchez <span class="ui">Installer</span>. L'installation redémarre l'application : la lecture en cours s'arrête, vos playlists et votre compte sont conservés. (<span class="ui">Plus tard</span> la repropose ensuite ; <span class="ui">Ignorer cette version</span> attend la suivante.)
+            <p><b>La première fois seulement</b>, Android demande d'autoriser Forge Audio à installer des applications : touchez <span class="ui">Ouvrir les réglages</span>, activez <span class="ui">Autoriser cette source</span> pour Forge Audio, revenez, puis confirmez l'installation.</p>
+            <p>Ensuite, sur Android 14 et plus récent, les mises à jour s'installent <b>sans rien demander</b>. Une notification « Forge Audio est à jour » vous le signale : touchez-la pour rouvrir l'application.</p>
+          </div>
+          <figure>
+            <svg viewBox="0 0 360 170" role="img" aria-label="Fenêtre Mise à jour prête de Forge Audio, boutons Plus tard et Installer">
+              <g font-family="Roboto, system-ui, sans-serif">
+                <rect x="30" y="6" width="300" height="158" rx="24" fill="#2d2f31" />
+                <text x="54" y="46" fill="#e8eaed" font-size="16">Mise à jour prête</text>
+                <text x="54" y="74" fill="#bdc1c6" font-size="12">Forge Audio 0.5.1 est téléchargée</text>
+                <text x="54" y="92" fill="#bdc1c6" font-size="12">(vous avez la 0.5.0). L'installation…</text>
+                <text x="90" y="136" fill="#8ab4f8" font-size="12" text-anchor="middle">Ignorer…</text>
+                <text x="180" y="136" fill="#8ab4f8" font-size="12.5" text-anchor="middle">Plus tard</text>
+                <rect x="232" y="114" width="80" height="34" rx="17" fill="none" stroke="#ff6a1a" stroke-width="2.5" />
+                <text x="272" y="136" fill="#8ab4f8" font-size="12.5" font-weight="600" text-anchor="middle">Installer</text>
+              </g>
+            </svg>
+            <figcaption>Schéma de la fenêtre de mise à jour</figcaption>
+          </figure>
+        </li>
+      </ol>
+      <div class="box warn">
+        <p><b>Vous aviez installé une version d'avant le 30 septembre 2026</b> (0.4.1 ou plus ancienne) ? Elle était signée avec une autre clé : Android refuse d'installer la nouvelle par-dessus. Désinstallez l'ancienne une fois, puis installez celle-ci. Votre compte et vos playlists restent sur le serveur.</p>
+      </div>
+
+      <h2 id="arriere-plan">Si la musique se coupe écran éteint</h2>
+      <p>Certains fabricants arrêtent les applications en arrière-plan pour économiser la batterie. Ouvrez <span class="ui">Paramètres</span> → <span class="ui">Applications</span> → <b>Forge Audio</b> → <span class="ui">Batterie</span> et choisissez <span class="ui">Aucune restriction</span> (ou « Non restreinte »). Sur Xiaomi, Redmi et POCO, activez aussi le <span class="ui">Démarrage automatique</span> de Forge Audio. Vérifiez enfin que les notifications de Forge Audio sont autorisées.</p>
+
+      <h2 id="desinstaller">Désinstaller</h2>
+      <p>Appui long sur l'icône Forge Audio → <span class="ui">Désinstaller</span>, ou <span class="ui">Paramètres</span> → <span class="ui">Applications</span> → <b>Forge Audio</b> → <span class="ui">Désinstaller</span>. Votre compte reste sur le serveur.</p>
+
+      <h2 id="sources" style="font-size:22px">Sources</h2>
+      <p class="meta">Étapes vérifiées le 1er octobre 2026, et testées sur émulateur Android 11 et 16 et sur un Xiaomi 15T Pro. Les libellés varient selon le fabricant et la version d'Android ; les schémas sont simplifiés.</p>
+      <ul class="sources-list">
+        <li>Google, « <a href="https://developers.google.com/android/play-protect/warning-dev-guidance?hl=fr" rel="noopener">Conseils pour les développeurs concernant les avertissements Google Play Protect</a> » (« Analyse d'appli recommandée », « Analyser l'appli », « Envoyer l'appli pour vérification de sécurité »).</li>
+        <li>Aide Google Play, « <a href="https://support.google.com/googleplay/answer/2812853?hl=fr" rel="noopener">Utiliser Google Play Protect pour protéger vos applications</a> ».</li>
+        <li>Android Developers, « <a href="https://developer.android.com/distribute/marketing-tools/alternative-distribution#unknown-sources" rel="noopener">Alternative distribution options : User opt-in for unknown apps</a> » (autorisation par application depuis Android 8).</li>
+        <li>Aide Google Chrome, « <a href="https://support.google.com/chrome/answer/6261569?hl=fr" rel="noopener">Résoudre les problèmes de téléchargement de fichiers dans Chrome</a> » (« Ce fichier est peut-être dangereux »).</li>
+        <li>How-To Geek, « <a href="https://www.howtogeek.com/two-ways-to-install-apps-when-google-play-protect-wont-allow-it/" rel="noopener">Google Play Protect is blocking your apps now</a> » (blocage avec « More details » puis « Install anyway »).</li>
+      </ul>
+    </div>

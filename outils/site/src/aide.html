@@ -1,0 +1,88 @@
+<!--meta
+title: Aide et contact : Forge Audio
+description: Obtenir de l'aide sur Forge Audio : je n'arrive pas à me connecter, blocage après plusieurs échecs, signaler un problème, nous contacter.
+nav: aide
+-->
+    <div class="page-head">
+      <div class="wrap narrow">
+        <h1>Aide et <span class="grad">contact</span></h1>
+        <p class="lead">Un souci de connexion, d'installation ou de lecture ? Les cas les plus fréquents sont ici. Sinon, écrivez-nous : une personne vous répond.</p>
+        <nav class="toc" aria-label="Sur cette page"><b>Sur cette page</b><a href="#connexion">Je n'arrive pas à me connecter</a><a href="#installation">Installation</a><a href="#lecture">Lecture</a><a href="#signaler">Signaler un problème</a><a href="#contact">Nous contacter</a></nav>
+      </div>
+    </div>
+
+    <div class="wrap narrow prose">
+      <h2 id="connexion">Je n'arrive pas à me connecter</h2>
+      <ol class="steps">
+        <li class="text">
+          <div>
+            <b>Tapez l'identifiant exact.</b> C'est celui choisi à la création du compte (ou donné par l'administrateur), par exemple <code>loris</code> : ni votre adresse e-mail, ni votre nom affiché. Il ne contient ni espace ni accent ; majuscules ou minuscules, peu importe.
+          </div>
+        </li>
+        <li class="text">
+          <div>
+            <b>Collez le mot de passe, ne le retapez pas.</b> Il fait au moins 70 caractères : une seule erreur de frappe suffit à le rendre faux. Utilisez celui enregistré par votre navigateur ou votre gestionnaire de mots de passe.
+            <p><b>On vous l'a envoyé par message ?</b> Discord et d'autres messageries transforment certains symboles (<code>*</code>, <code>_</code>, <code>~</code>, <code>|</code>) en mise en forme : le mot de passe copié n'est alors plus le bon. Demandez-le <b>dans un bloc de code</b> (entre trois accents graves <code>```</code> sur Discord), puis copiez-le depuis ce bloc. Vérifiez aussi qu'aucun espace ne s'est glissé au début ou à la fin.</p>
+          </div>
+        </li>
+        <li class="text">
+          <div>
+            <b>« Trop de tentatives, réessayez dans … min » ?</b> Après <b>8 échecs</b>, les connexions depuis votre réseau sont bloquées pendant <b>15 minutes</b>, pour empêcher qu'on devine les mots de passe. Attendez la fin du délai sans réessayer (chaque essai pendant le blocage ne sert à rien), puis connectez-vous avec le mot de passe collé.
+          </div>
+        </li>
+        <li class="text">
+          <div>
+            <b>Toujours rien ?</b> Le mot de passe ne peut pas être retrouvé, mais l'administrateur peut le remplacer. <a href="#contact">Écrivez-nous</a> avec votre identifiant (jamais votre mot de passe) : vous recevrez un nouveau mot de passe.
+          </div>
+        </li>
+      </ol>
+      <div class="box">
+        <p><b>Code d'invitation refusé ?</b> Il ne sert qu'une fois et expire après 1, 7 ou 30 jours. Copiez-le en entier, tirets compris (<code>FORGE-XXXX-XXXX-XXXX</code>). S'il a expiré ou déjà servi, demandez-en un nouveau à la personne qui vous a invité.</p>
+      </div>
+
+      <h2 id="installation">Installation</h2>
+      <p>Chaque guide explique les avertissements de sécurité de votre système, étape par étape :</p>
+      <div class="choice">
+        <a class="pick" href="/windows.html"><b>Windows</b><span>« Windows a protégé votre ordinateur », antivirus, désinstallation.</span></a>
+        <a class="pick" href="/macos.html"><b>macOS</b><span>« Ouvrir quand même », application « endommagée ».</span></a>
+        <a class="pick" href="/linux.html"><b>Linux</b><span>AppImage qui ne démarre pas, .deb, .rpm.</span></a>
+        <a class="pick" href="/android.html"><b>Android</b><span>Téléchargement bloqué à 100 %, Play Protect, mises à jour.</span></a>
+        <a class="pick" href="/ios.html"><b>iPhone et iPad</b><span>Écran d'accueil, Sideloadly, « Développeur non approuvé ».</span></a>
+      </div>
+
+      <h2 id="lecture">Lecture</h2>
+      <details>
+        <summary>Un titre ne se lance pas ou s'arrête</summary>
+        <p>Passez au suivant puis revenez-y : une source peut refuser une requête un instant. Si un titre précis ne marche jamais, essayez une autre version (autre source dans la recherche) et signalez-le-nous avec son nom.</p>
+      </details>
+      <details>
+        <summary>La musique s'arrête quand l'écran s'éteint</summary>
+        <p>Dans un navigateur, c'est normal quand la page est fermée. Sur Android, voyez <a href="/android.html#arriere-plan">Si la musique se coupe écran éteint</a> ; sur iPhone, les <a href="/ios.html#methode-1">limites des apps web</a>.</p>
+      </details>
+      <details>
+        <summary>Un extrait de 30 secondes seulement (SoundCloud)</summary>
+        <p>Certains titres SoundCloud sont réservés aux abonnés de SoundCloud : seul un extrait est public. Choisissez une autre source pour ce titre.</p>
+      </details>
+      <details>
+        <summary>Pas de son du tout</summary>
+        <p>Vérifiez le volume de Forge Audio, puis celui du système. Sous Windows, ouvrez le <b>mélangeur de volume</b> (clic droit sur l'icône du haut-parleur) : le navigateur ou Forge Audio peut y être à zéro ou coupé, indépendamment du reste.</p>
+      </details>
+
+      <h2 id="signaler">Signaler un problème</h2>
+      <p>Pour qu'on puisse vous aider vite, indiquez :</p>
+      <ul>
+        <li>l'appareil et le système (par exemple « Xiaomi, Android 15 » ou « PC Windows 11 ») ;</li>
+        <li>où : lecteur web (et quel navigateur), application Android, application de bureau, iPhone ;</li>
+        <li>ce que vous faisiez, ce qui s'est passé, et le message affiché s'il y en a un (une capture d'écran aide beaucoup) ;</li>
+        <li>votre identifiant si le problème touche votre compte. <b>Ne donnez jamais votre mot de passe</b> : personne ne vous le demandera.</li>
+      </ul>
+      <p>Vous avez un compte GitHub et le problème est technique ? Vous pouvez aussi ouvrir un ticket public : <a href="https://github.com/Heiphaistos/Forge-audio-/issues">lecteur et bureau</a> ou <a href="https://github.com/Heiphaistos/Forge-Audio-Android/issues">application Android</a>. N'y mettez aucune information personnelle.</p>
+
+      <h2 id="contact">Nous contacter</h2>
+      <div class="card hot">
+        <h3>Par e-mail</h3>
+        <p>Pour toute question, un problème de compte ou une demande d'invitation. Réponse en général sous quelques jours.</p>
+        <div class="links"><a class="btn btn-fire" href="mailto:contact@heiphaistos.org?subject=Forge%20Audio">contact@heiphaistos.org</a></div>
+      </div>
+      <p class="meta" style="margin-top:16px">Questions sur vos données personnelles (accès, suppression) : voyez la <a href="/confidentialite.html">politique de confidentialité</a>.</p>
+    </div>
